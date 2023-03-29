@@ -26,8 +26,8 @@ jobs:
           npm run build
           npm run export
           touch out/.nojekyll
-          npm set-script build "next build"
-          npm set-script export "next export"
+        # npm set-script build "next build"
+        # npm set-script export "next export"
 
       - name: Deploy
         # configure an external GitHub Pages deploy workflow here
