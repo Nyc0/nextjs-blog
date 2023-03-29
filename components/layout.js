@@ -43,7 +43,7 @@ export default function Layout({ children, home }) {
             <Link href="/">
               <Image
                 priority
-                src={`${process.env.BASE_PATH}/images/profile.jpg`}
+                src="/images/profile.jpg"
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}
