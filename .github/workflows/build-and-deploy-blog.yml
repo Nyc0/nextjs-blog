@@ -21,6 +21,7 @@ jobs:
 
       - name: Build
         run: |
+          npm install gray-matter
           npm ci
           npm run build
           npm run export
