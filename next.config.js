@@ -17,10 +17,7 @@ module.exports = {
   assetPrefix: assetPrefix,
   basePath: basePath,
   images: {
-    //loader: 'imgix',
-    //path: 'https://nicolasgrymonprezblog.imgix.net',
     loader: 'custom',
     loaderFile: '/pages/loader.js',
-    //unoptimized: true,
   },
 }
