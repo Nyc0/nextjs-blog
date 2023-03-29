@@ -34,6 +34,7 @@ export default function Layout({ children, home }) {
               className={utilStyles.borderCircle}
               height={144}
               width={144}
+              quality={75}
               alt=""
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -47,6 +48,7 @@ export default function Layout({ children, home }) {
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}
+                quality={75}
                 alt=""
               />
             </Link>
@@ -61,7 +63,6 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          {console.log("test" + `${process.env.PUBLIC_URL}`)} <br/>
           <Link href="/">← Back to home</Link>
         </div>
       )}
