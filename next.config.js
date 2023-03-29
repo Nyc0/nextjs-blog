@@ -17,6 +17,7 @@ module.exports = {
   assetPrefix: assetPrefix,
   basePath: basePath,
   images: {
-    unoptimized: true,
+    loader: 'imgix',
+    path: 'nicolasgrymonprezblog.imgix.net',
   },
 }
