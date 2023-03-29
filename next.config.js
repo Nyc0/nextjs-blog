@@ -18,6 +18,6 @@ module.exports = {
   basePath: basePath,
   images: {
     loader: 'imgix',
-    path: 'nicolasgrymonprezblog.imgix.net',
+    path: 'https://nicolasgrymonprezblog.imgix.net/',
   },
 }
