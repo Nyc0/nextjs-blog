@@ -1,5 +1,5 @@
 ---
-title: 'The reasoning for this blog'
+title: 'The reason behind this blog'
 date: '2023-03-29'
 ---
 
