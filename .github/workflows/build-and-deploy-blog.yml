@@ -17,13 +17,21 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           # update the Node version to meet your needs
-          node-version: 16
+          node-version: 18
           cache: npm
 
       - name: Build
         run: |
           npm ci
-          # configure the build here
+          npm run build
+          npm run export
+          touch out/.nojekyll
+          npm set-script build "next build"
+          npm set-script export "next export"
 
       - name: Deploy
         # configure an external GitHub Pages deploy workflow here
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          branch: gh-pages
+          folder: out
