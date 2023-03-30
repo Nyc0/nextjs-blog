@@ -21,7 +21,12 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hello, I am Nicolas Grymonprez. I have a technical project manager with interest in application devlopment, DevOps and cloud services.</p>
+        <p>Hello, I am Nicolas Grymonprez. You will find my resume, blog, interests, and projects.</p>
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Resume</h2>
+        <Link href="/cv">Resume</Link>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -37,6 +42,11 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Sailing blog</h2>
+        My wife and I adventure on <a href="https://nicoanderica.com/">French Kiss</a> sailing vessel, a 2001 Beneteau Ocean 361 Clipper.
       </section>
     </Layout>
   );
