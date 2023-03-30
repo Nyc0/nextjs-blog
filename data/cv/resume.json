@@ -26,11 +26,12 @@
   },
   "work": [{
     "name": "Oracle (Cerner)",
+    "image": "/images/oraclecerner.jpg",
     "position": "Sr. Technical Project Manager",
     "url": "http://cerner.com/",
     "startDate": "2022-05-01",
     "endDate": "2014-09-16",
-    "summary": "Description…",
+    "summary": "Responsible for the planning, coordinating, executing, running go-lives of technical projects for three major Oracle Cerner hosted clients in Australia. Queensland health (13k+ CCU), Alfred Health (2.5k CCU), and Western Health (1.8k CCU).     Projects varied from technically supporting major consulting projects with the introduction of new solutions/workflows, tech currency upgrades (Linux, Citrix, Windows, downtime solutions), BAU projects (Millennium release upgrades, Disaster Recovery testing, domain refreshes).Projects where planned and tracked via Jiras. Daily scrums were held across clients, with remote resources located in Australia and India. I also ensured lessons learned were being tracked, documented, and shared amongs the region or globally.",
     "highlights": [
       "..."
     ]

@@ -1,5 +1,6 @@
 import Layout from '/components/layout';
 import Head from 'next/head';
+import Image from 'next/image';
 import utilStyles from '../styles/utils.module.css';
 
 // Fetching data from the JSON file
@@ -37,15 +38,28 @@ export default function Cv(props) {
                     I am really motivated when I learn and grow with a team. Through my previous carreer I quickly endeavour to become a Cerner Command Language Intermediate and Advanced intructor. I lead effort to standardise and document many workflows and knowledge. On my personal time I spent a lot of time learning sailing, and learning all systems on my previous boat in order to achieve a personal goal. I am currently trying to dive again into application devlopment, as well as learning about DevOps and cloud services and architecture.</p>
                 </div>
                 <div className={utilStyles.lightText}>
-                    Professional experience TODO: Load data from json file
                     {jobs.map(job =>
-                        <div
-                            key={job.position}
-                            style={{ padding: 20, borderBottom: '1px solid #ccc' }}>
-                            <h2>{job.name}</h2>
-                            <h2>{job.position}</h2>
-                            <p>{job.summary}</p>
-                        </div>)
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <Image
+                                            priority
+                                            src={job.image}
+                                            className={utilStyles.borderCircle}
+                                            height={144}
+                                            width={144}
+                                            quality={75}
+                                            alt={job.name}
+                                        />
+                                    </td>
+                                    <td>{job.position}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">{job.summary}</td>
+                                </tr>
+                            </tbody>
+                        </table>)
                     }
                 </div>
                 <div className={utilStyles.lightText}>
