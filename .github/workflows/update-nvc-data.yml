@@ -1,0 +1,38 @@
+name: Update NVC data
+
+on:
+  schedule:
+    # check every 10 minutes on Monday in the update window
+    - cron: 3/10 14-16 * * 1
+    # check every hour on Monday outside the update window
+    - cron: 38 0-13,17-23 * * 1
+    # check every day for the rest of the week
+    - cron: 38 8 * * 0,2-6
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: lib
+
+jobs:
+  update-nvc-data:
+    name: Update NVC data
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      new-commit-sha: ${{ steps.head_commit.outputs.commit_sha }}
+      updated: ${{ steps.commit.outputs.pushed }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9.0"
+      - name: Run script
+        run: python nvc-scrap.py
+      - name: Commit changes
+        id: commit
+        uses: EndBug/add-and-commit@v9
+      - id: head_commit
+        run: echo "::set-output name=commit_sha::$(git rev-parse HEAD)"
