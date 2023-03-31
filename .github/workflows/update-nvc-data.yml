@@ -40,3 +40,10 @@ jobs:
         uses: EndBug/add-and-commit@v9
       - id: head_commit
         run: echo "commit_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+  build:
+    if: needs.update-nvc-data.outputs.committed == 'true'
+    uses: Nyc0/nextjs-blog/.github/workflows/build-and-deploy-blog.yml@main
+    needs: [update-nvc-data]
+    with:
+      ref: ${{ needs.update-nvc-data.outputs.new-commit-sha }}
