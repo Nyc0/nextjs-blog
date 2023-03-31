@@ -37,11 +37,12 @@
     ]
   },{
     "name": "Oracle (Cerner)",
+    "image": "/images/oraclecerner.jpg",
     "position": "Technical Project Manager",
     "url": "http://cerner.com/",
     "startDate": "2020-04-01",
     "endDate": "2022-05-01",
-    "summary": "Description…",
+    "summary": "I am responsible for developing and managing the overall client technical project roadmap, including the delivery of upgrades and go-live events, as well as serving as the technical liaison between Cerner and the client. The main project I delivered was a data centre migration (RHO flip) project that moved Western Health Millennium solutions from HTS to Cerner data center. This was the first RHO flip from HTS, and this included the first CAMM images migration to the cloud (CAMM7). In addition to those unknown challenges from being first in country, the project was delivered 100% remotely from Australia, India, the US, and during the pandemic lockdowns. I am also looking at standardising our deliverables by enhancing our internal documentation, defining workplan / project plans, and promoting internal tools to that effect (JiraHelper, ACME, Github, Config as Code, Chef). Working with live environments and the largest Cerner client outside of the US made me realize the need for strong monitoring tools. I have been adopting and promoting Zabbix and Splunk internally ensuring server monitoring was configured as part of project (NAT, Firewall etc.) and creating reports (Train domains status).",
     "highlights": [
       "..."
     ]

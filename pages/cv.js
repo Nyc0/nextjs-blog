@@ -38,8 +38,8 @@ export default function Cv(props) {
                     I am really motivated when I learn and grow with a team. Through my previous carreer I quickly endeavour to become a Cerner Command Language Intermediate and Advanced intructor. I lead effort to standardise and document many workflows and knowledge. On my personal time I spent a lot of time learning sailing, and learning all systems on my previous boat in order to achieve a personal goal. I am currently trying to dive again into application devlopment, as well as learning about DevOps and cloud services and architecture.</p>
                 </div>
                 <div className={utilStyles.lightText}>
-                    {jobs.map(job =>
-                        <table>
+                    {jobs.map((job, i) =>
+                        <table key={"job"+i}>
                             <tbody>
                                 <tr>
                                     <td>
@@ -56,7 +56,7 @@ export default function Cv(props) {
                                     <td>{job.position}</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2">{job.summary}</td>
+                                    <td colSpan="2">{job.summary}</td>
                                 </tr>
                             </tbody>
                         </table>)
@@ -64,20 +64,16 @@ export default function Cv(props) {
                 </div>
                 <div className={utilStyles.lightText}>
                     Skills TODO: Load data from json file
-                    {skills.map(skill =>
-                        <div
-                            key={skill.name}
-                            style={{ padding: 20, borderBottom: '1px solid #ccc' }}>
+                    {skills.map((skill,j) =>
+                        <div key={"skill"+j}>
                             <h2>{skill.name}</h2>
                         </div>)
                     }
                 </div>
                 <div className={utilStyles.lightText}>
                     Education TODO: Load data from json file
-                    {educations.map(education =>
-                        <div
-                            key={education.institution}
-                            style={{ padding: 20, borderBottom: '1px solid #ccc' }}>
+                    {educations.map((education, k) =>
+                        <div key={"edu"+k}>
                             <h2>{education.institution}</h2>
                         </div>)
                     }
