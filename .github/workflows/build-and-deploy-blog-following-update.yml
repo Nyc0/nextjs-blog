@@ -1,6 +1,6 @@
 # .github/workflows/build-and-deploy.yml
 
-name: Node.js CI
+name: Auto update CI/CD
 
 on:
   workflow_call:
