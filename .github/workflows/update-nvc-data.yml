@@ -45,7 +45,7 @@ jobs:
     if: needs.update-nvc-data.outputs.updated == 'true'
     permissions:
       contents: write
-    uses: Nyc0/nextjs-blog/.github/workflows/build-and-deploy-blog.yml@main
+    uses: Nyc0/nextjs-blog/.github/workflows/build-and-deploy-blog-following-update.yml@main
     needs: [update-nvc-data]
     with:
       ref: ${{ needs.update-nvc-data.outputs.new-commit-sha }}
