@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install requests
-          python -m pip install BeautifulSoup
+          python -m pip install beautifulsoup4
       - name: Run script
         run: python nvc-scrap.py
       - name: Commit changes
