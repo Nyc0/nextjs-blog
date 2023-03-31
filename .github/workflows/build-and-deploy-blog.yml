@@ -5,7 +5,13 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
-
+  workflow_call:
+    inputs:
+      ref:
+        description: "The git ref to build"
+        required: true
+        type: string
+        
 permissions:
   contents: write
 
