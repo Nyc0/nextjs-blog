@@ -124,6 +124,28 @@ export default function Cv(props) {
                     <canvas id='nvcChart'></canvas>
                     <p>My work was inspired by <a href="https://visawhen.com/nvc">visawhen.com/nvc</a>!</p>
                 </div>
+                <h2 className={utilStyles.headingXl}>Some details on the page</h2>
+                <div className={utilStyles.lightText}>
+                    <p>Here is how it works:</p>
+                    <ol>
+                        <li>On Monday the nvc-scrap.py gets called by a GitHub action</li>
+                        <ol>
+                            <li>The script retrieve the nvc-timeframe html</li>
+                            <li>BeautifulSoup parse the content and select specific elements of the DOM</li>
+                            <li>For each of the following lines, the script retreive and store the dates</li>
+                            <ul>
+                                <li>Current case creation time frame: As of <b>20-Mar-23</b>, we are working on cases that were received from USCIS on <b>3-Mar-23</b>.</li>
+                                <li>Current case review time: As of <b>20-Mar-23</b>, we are reviewing documents submitted to us on <b>3-Mar-23</b>.</li>
+                                <li>As of <b>20-Mar-23</b>, we are responding to inquiries received on <b>15-Mar-23</b>.</li>
+                            </ul>
+                            <li>The difference of the two dates on each lime is the waiting time</li>
+                            <li>The "As of" date gets saved with the waiting time in the nvc.json</li>
+                        </ol>
+                        <li>If the script updated nvc.json with new dates, GitHub action regenerate the static website</li>
+                        <li>This page uses a Line chart generated with Chart.js. The x axis labels are the keys of the JSON file, and the y axis are the associated data.</li>
+                    </ol>
+                    
+                </div>
             </article>
         </Layout>
     );

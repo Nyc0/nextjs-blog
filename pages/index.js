@@ -25,8 +25,8 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Resume</h2>
-        <Link href="/cv">Resume</Link>
+        <h2 className={utilStyles.headingLg}>Résumé</h2>
+        <Link href="/cv">Résumé</Link>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

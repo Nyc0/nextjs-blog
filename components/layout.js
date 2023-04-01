@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
+import cvStyles from '../styles/cv.module.css';
 import Link from 'next/link';
 
 const name = 'Nicolas Grymonprez';
@@ -59,12 +60,12 @@ export default function Layout({ children, home, cv }) {
                       </Link>
                     </td>
                     <td>
-                      <div className={utilStyles.cvTitle}>
+                      <div className={cvStyles.cvTitle}>
                         {name}<br/>
                         📍 Currently relocating to the USA<br/>
                         📞: +61 447 561 994<br/>
                         📧: <a href="mailto:nicolas.grymonprez@gmail.com">nicolas.grymonprez@gmail.com</a><br/>
-                        🌐: French, British<br/>                        
+                        🌐: French, British 🗣:French, English<br/>                        
                       </div>
                     </td>
                   </tr>

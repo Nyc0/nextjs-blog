@@ -1,0 +1,28 @@
+.cvTitle {
+    align-items: center;
+    text-align: right;
+}
+
+.sumText {
+    color: #666;
+    text-align: justify;
+    font-size: 14px;
+}
+
+.sumExp {
+    color: #666;
+    text-align: justify;
+    font-size: 12px;
+}
+
+.jobTitle {
+    color: #666;
+    text-align: left;
+    font-size: 14px;
+}
+
+.jobDate {
+    color: #666;
+    text-align: right;
+    font-size: 12px;
+}
