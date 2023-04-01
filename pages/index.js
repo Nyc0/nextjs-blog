@@ -45,6 +45,11 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Projects</h2>
+        <Link href="/nvc">NVC Tracker</Link>
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Sailing blog</h2>
         My wife and I adventure on <a href="https://nicoanderica.com/">French Kiss</a> sailing vessel, a 2001 Beneteau Ocean 361 Clipper.
       </section>

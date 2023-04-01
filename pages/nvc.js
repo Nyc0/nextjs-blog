@@ -44,6 +44,11 @@ export default function Cv(props) {
         inquiryArray.push(inquiries[key]);
     }
 
+    var nextMonday = new Date();
+    const today = new Date();
+    nextMonday.setDate(nextMonday.getDate() + (1 + 7 - nextMonday.getDay()) % 7);
+    var todayBool = (((nextMonday.getDate()-today.getDate()) === 0) ? true : false);
+
     const data = {
         labels: labelsArray,
         datasets: [{
@@ -114,10 +119,10 @@ export default function Cv(props) {
             <article>
                 <h1 className={utilStyles.headingXl}>NVC Tracker</h1>
                 <div className={utilStyles.lightText}>
-                    <p>The NVC tracker will be updated next Monday (XXXXXXXXXXXXXXXXXXXXXXXXX). The data should be made available by the end of the day US time.</p>
-                    <p>The data is extracted from <a src="https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html">nvc-timeframe</a> website.</p>
+                    <p>The NVC tracker will be updated { (todayBool ? "today" : "next Monday ")} ({nextMonday.toDateString()}). The data should be made available by the end of the day US time.</p>
+                    <p>The data is extracted from <a href="https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html">nvc-timeframe</a> website.</p>
                     <canvas id='nvcChart'></canvas>
-                    <p>My work was inspired by <a src="https://visawhen.com/nvc">visawhen.com/nvc</a>!</p>
+                    <p>My work was inspired by <a href="https://visawhen.com/nvc">visawhen.com/nvc</a>!</p>
                 </div>
             </article>
         </Layout>
