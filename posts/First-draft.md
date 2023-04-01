@@ -17,3 +17,4 @@ My next steps:
     2. Clean JSON, item not display will be removed
 4. Use branches and pull requests
 5. Learn how to scrap dynamic websites
+6. Ensure that Github actions are not running in parrallel
