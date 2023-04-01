@@ -15,4 +15,5 @@ My next steps:
 3. cv.js
     1. Awards TODO: Load data from json file
     2. Clean JSON, item not display will be removed
-4. Learn how to scrap dynamic websites
+4. Use branches and pull requests
+5. Learn how to scrap dynamic websites
