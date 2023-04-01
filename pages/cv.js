@@ -42,14 +42,13 @@ export default function Cv(props) {
                 <h2 className={utilStyles.headingXl}>Experience</h2>
                 <div className={utilStyles.lightText}>
                     {jobs.map((job, i) =>
-                        <table key={"job"+i}>
+                        <table key={"job"+i} className={utilStyles.table}>
                             <tbody>
                                 <tr>
-                                    <td>
+                                    <td className={utilStyles.logo}>
                                         <Image
                                             priority
                                             src={job.image}
-                                            className={utilStyles.borderCircle}
                                             height={70}
                                             width={70}
                                             quality={75}
@@ -76,24 +75,23 @@ export default function Cv(props) {
                 <h2 className={utilStyles.headingXl}>Education</h2>
                 <div className={utilStyles.lightText}>
                     {educations.map((education, k) =>
-                        <table key={"edu"+k}>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <Image
-                                        priority
-                                        src={education.image}
-                                        className={utilStyles.borderCircle}
-                                        height={70}
-                                        width={70}
-                                        quality={75}
-                                        alt={education.institution}
-                                    />
-                                </td>
-                                <td className={cvStyles.jobTitle}>{education.institution}</td>
-                                <td className={cvStyles.jobDate}>{"from " + education.startDate + " to " + education.endDate}</td>
-                            </tr>
-                        </tbody>
+                        <table key={"edu"+k} className={utilStyles.table}>
+                            <tbody>
+                                <tr>
+                                    <td className={utilStyles.logo}>
+                                        <Image
+                                            priority
+                                            src={education.image}
+                                            height={70}
+                                            width={70}
+                                            quality={75}
+                                            alt={education.institution}
+                                        />
+                                    </td>
+                                    <td className={cvStyles.jobTitle}>{education.institution}</td>
+                                    <td className={cvStyles.jobDate}>{"from " + education.startDate + " to " + education.endDate}</td>
+                                </tr>
+                            </tbody>
                     </table>)
                     }
                 </div>
