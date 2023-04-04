@@ -11,8 +11,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      ftpVersion: true
     steps:
       - uses: actions/checkout@v3
 
@@ -23,6 +21,8 @@ jobs:
           cache: npm
 
       - name: Build
+        env:
+          ftpVersion: true
         run: |
           npm install gray-matter
           npm ci
