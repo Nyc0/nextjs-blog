@@ -1,0 +1,49 @@
+# .github/workflows/build-and-deploy.yml
+
+name: FTP blog
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: "The git ref to build"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ftpVersion: true
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          # update the Node version to meet your needs
+          node-version: 19
+          cache: npm
+
+      - name: Build
+        run: |
+          npm install gray-matter
+          npm ci
+          npm run build
+          npm run export
+          touch out/.nojekyll
+
+      - name: FTP Deploy
+        # Deploy the GitHub Pages to an external host with ftp - see comment
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp.cluster010.hosting.ovh.net
+          username: grymonpr
+          password: ${{ secrets.ftp_password }}
+          #v4.3.4 doesn't seem to work with ftps on port 22
+          # port: 22
+          # protocol: ftps
+          local-dir: ./out/
+          server-dir: ./www/blog/

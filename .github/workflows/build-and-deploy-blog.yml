@@ -36,16 +36,9 @@ jobs:
         with:
           branch: gh-pages
           folder: out
-  
-      - name: FTP Deploy
-        # Deploy the GitHub Pages to an external host with ftp - see comment
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ftp.cluster010.hosting.ovh.net
-          username: grymonpr
-          password: ${{ secrets.ftp_password }}
-          #v4.3.4 doesn't seem to work with ftps on port 22
-          # port: 22
-          # protocol: ftps
-          local-dir: ./out/
-          server-dir: ./www/blog/
+
+  ftp:
+    permissions:
+      contents: write
+    uses: Nyc0/nextjs-blog/.github/workflows/ftp-blog.yml@main
+    needs: [build]

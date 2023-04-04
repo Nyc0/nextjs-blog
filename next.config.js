@@ -1,11 +1,12 @@
 // next.config.js
 
 const isGithubActions = process.env.GITHUB_ACTIONS || false
+const isFTPVersion = process.env.ftpVersion || false
 
 let assetPrefix = ''
 let basePath = ''
 
-if (isGithubActions) {
+if (isGithubActions && !isFTPVersion) {
   // trim off `<owner>/`
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
 
