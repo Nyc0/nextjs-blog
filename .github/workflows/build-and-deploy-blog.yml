@@ -38,7 +38,7 @@ jobs:
           folder: out
   
       - name: FTP Deploy
-        # Deploy the GitHub Pages to an external host 
+        # Deploy the GitHub Pages to an external host with sftp
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.cluster010.hosting.ovh.net
