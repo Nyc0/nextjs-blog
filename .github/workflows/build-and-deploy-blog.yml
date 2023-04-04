@@ -40,9 +40,7 @@ jobs:
   ftp:
     permissions:
       contents: write
-    steps:
-    - uses: Nyc0/nextjs-blog/.github/workflows/ftp-blog.yml@main
-      with:
-        secrets:
-          ftpPwd: ${{ secrets.FTP_PASSWORD }}
+    uses: Nyc0/nextjs-blog/.github/workflows/ftp-blog.yml@main
+    secrets:
+      ftpPwd: ${{ secrets.FTP_PASSWORD }}
     needs: [build]
