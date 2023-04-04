@@ -11,6 +11,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ftpVersion: true
+      password: ${{ secrets.ftp_password }}
     steps:
       - uses: actions/checkout@v3
 
@@ -39,4 +42,3 @@ jobs:
           # protocol: ftps
           local-dir: ./out/
           server-dir: ./www/blog/
-          password: ${{ secrets.ftp_password }}
