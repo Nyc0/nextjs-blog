@@ -2,11 +2,12 @@ name: Update NVC data
 
 on:
   schedule:
-    # check every 10 minutes on Monday in the update window
-    - cron: 3/10 14-16 * * 1
-    # check every hour on Monday outside the update window
-    - cron: 38 0-13,17-23 * * 1
-    # check every day for the rest of the week
+    # Remember the time is UTC https://www.worldtimebuddy.com/
+    # check every 10 minutes on Monday in the update window. Assumption that update window is 2 to 4 pm EDT
+    - cron: 3/10 18-20 * * 1
+    # check every hour on Monday outside the update window from 12:38 to 7:38 pm EDT
+    - cron: 38 16-18,20,21-23 * * 1
+    # check every day for the rest of the week at 4:38 am
     - cron: 38 8 * * 0,2-6
   workflow_dispatch:
 
