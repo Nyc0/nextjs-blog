@@ -45,7 +45,7 @@ jobs:
           username: grymonpr
           password: ${{ secrets.ftp_password }}
           port: 22
-          protocol: sftp
+          protocol: ftps-legacy
           local-dir: ./out/
           server-dir: ./www/blog/
           dry-run: true
