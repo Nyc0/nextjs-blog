@@ -43,6 +43,4 @@ jobs:
           server: ftp.cluster010.hosting.ovh.net
           username: grymonpr
           password: ${{ secrets.ftp_password }}
-          port: 22
-          protocol: ftps
           dry-run: true
