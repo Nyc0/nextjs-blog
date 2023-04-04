@@ -43,4 +43,6 @@ jobs:
           server: ftp.cluster010.hosting.ovh.net
           username: grymonpr
           password: ${{ secrets.ftp_password }}
+          local-dir: ./out/
+          server-dir: ./www/blog/
           dry-run: true
