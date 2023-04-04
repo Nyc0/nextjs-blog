@@ -43,4 +43,5 @@ jobs:
     uses: Nyc0/nextjs-blog/.github/workflows/ftp-blog.yml@main
     needs: [build]
     with:
-      ref: ${{ secrets.FTP_PASSWORD }}
+      secrets:
+        ftpPwd: ${{ secrets.FTP_PASSWORD }}

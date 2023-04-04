@@ -4,11 +4,9 @@ name: FTP blog
 
 on:
   workflow_call:
-    inputs:
-      ref:
-        description: "The password for FTP"
+    secrets:
+      ftpPwd:
         required: true
-        type: string
 
 permissions:
   contents: write
@@ -18,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ftpVersion: true
-      password: ${{ inputs.ref }}
     steps:
       - uses: actions/checkout@v3
 
@@ -42,7 +39,7 @@ jobs:
         with:
           server: ftp.cluster010.hosting.ovh.net
           username: grymonpr
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: ${{ secrets.ftpPwd }}
           #v4.3.4 doesn't seem to work with ftps on port 22
           # port: 22
           # protocol: ftps
