@@ -20,6 +20,12 @@ Once set up I had CSS issues. The CSS wasn't loading as the HTML was looking for
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
 if (isGithubActions) {
+  // trim off `<owner>/`
+  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
+
+  assetPrefix = `/${repo}/`
+  basePath = `/${repo}`
+}
 ```
 
 Removing the variable and if statement would solve the issue. However I wanted to keep the GitHub Page, maybe as a disaster recovery option 😅.
