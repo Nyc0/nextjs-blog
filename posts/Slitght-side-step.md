@@ -34,6 +34,6 @@ const isFTPVersion = const isFTPVersion = process.env.ftpVersion || false
 if (isGithubActions && !isFTPVersion) {
 ```
 
-process.env.ftpVersion has to be added a .yml and since I wanted to keep deploying to GitHub pages, I created another Build and Deploy workflow to FTP the newly build website that isn't definying assetPrefix and basePath.
+process.env.ftpVersion has to be added a ftp-blog.yml and since I wanted to keep deploying to GitHub pages, I created another Build and Deploy workflow to FTP the newly build website that isn't definying assetPrefix and basePath.
 
-A push to the main branch starts, which then use workflow. The hiccup encountered was related to the unavailability of the repository secrets. This was fixed after reading the following help page: [reusing workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
+A push to the main branch starts build-and-deploy-blog.yml, which then use workflow ftp-blog.yml. The hiccup I encountered was related to the unavailability of the repository secrets. This was fixed after reading the following help page: [reusing workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows). The secret either have to be inherited or passed to the reused workflow, I have decided to explicitly pass it.
