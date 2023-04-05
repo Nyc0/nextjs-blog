@@ -18,8 +18,10 @@ DNS and Multisite configuration https://docs.ovh.com/gb/en/hosting/multisites-co
 
 Once set up I had CSS issues. The CSS wasn't loading as the HTML was looking for the code withing my GitHub repo name. Since I was initially deploying the website to GitHub pages I had to update the assetPrefix and basePath when the build process was ran by a GitHub action. 
 
+```
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 if (isGithubActions) {
+```
 
 Removing the variable and if statement would solve the issue. However I wanted to keep the GitHub Page, maybe as a disaster recovery option 😅.
 
