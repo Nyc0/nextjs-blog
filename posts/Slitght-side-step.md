@@ -20,6 +20,7 @@ Once set up I had CSS issues. The CSS wasn't loading as the HTML was looking for
 
 ```
 const isGithubActions = process.env.GITHUB_ACTIONS || false
+
 if (isGithubActions) {
 ```
 
@@ -27,9 +28,11 @@ Removing the variable and if statement would solve the issue. However I wanted t
 
 Here is my updated code with a new variable and an updated logical condition. 
 
-           const isFTPVersion =            const isFTPVersion = process.env.ftpVersion || false
+```
+const isFTPVersion = const isFTPVersion = process.env.ftpVersion || false
 
-            if (isGithubActions && !isFTPVersion) {
+if (isGithubActions && !isFTPVersion) {
+```
 
 process.env.ftpVersion has to be added a .yml and since I wanted to keep deploying to GitHub pages, I created another Build and Deploy workflow to FTP the newly build website that isn't definying assetPrefix and basePath.
 
