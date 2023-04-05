@@ -3,24 +3,25 @@ title: 'Slight-side-step'
 date: '2023-04-04'
 ---
 
-Since 2011, I have the domain name grymonprez.com. My previous blog which hadn't been updated since 2016 was using it. I decided to check what it would take to re-use it. 
+Since 2011, I have the domain name grymonprez.com. My previous blog which hadn't been updated since 2016 was using it. I decided to check what it would take to re-use it: [nicolas.grymonprez.com](nicolas.grymonprez.com)
 
-Page custom domains
-    https://da-sha1.me/configuration/2019/03/03/redirect-custom-domain-to-github-pages.html
-    Pros:
-    Cons:
+This can be achieved in a few way, you can point you domain, subdomain to the GitHub Page and update the GitHub Page custom domain settings. This really handy post allowed me to do that: [Redirect custom domain to github pages](https://da-sha1.me/configuration/2019/03/03/redirect-custom-domain-to-github-pages.html).
+However this was coming with a con that would not allow me to use another domain for another project. I am not sure of any future projects but that's not something I thought needed to be trade of. Since my domain name comes with a hosting space, ftp and database let's use that.
 
-Custom OVH action
-    https://github.com/pitscher/ovh-deploy-hosting-action 
-    After looking into entrypoint.sh I understood that it was not doing what I wanted. How that gave me an simple example on how a action template can work.
+my hosting provider is OVH and I quickly found
+[OVH deploy hosting action](https://github.com/pitscher/ovh-deploy-hosting-action). However, after looking into entrypoint.sh I understood that it was not doing what I wanted. It's not actually deploying the static website. I could have looked at creating and action and updating it but I looked for a FTP action instead. I will keep this as an simple example on how an action template can work.
 
-Custom FTP action to upload the generatic static website to a remote server
-    https://github.com/marketplace/actions/ftp-deploy
+Custom [FTP action](https://github.com/marketplace/actions/ftp-deploy) to upload the generatic static website to a remote server was easy to set up. I am still trying to figure out an issue with ftps.
+Since my hosting was set up against my WordPress website, I had to configure the URL to point to a different directory within the www directory. 
 
-    DNS and Multisite configuration
-    https://docs.ovh.com/gb/en/hosting/multisites-configuring-multiple-websites/#step-1-access-multisite-management 
+DNS and Multisite configuration https://docs.ovh.com/gb/en/hosting/multisites-configuring-multiple-websites/#step-1-access-multisite-management 
 
-    CSS issues
+Once set up I had CSS issues. The CSS wasn't loading as the HTML was looking for the code withing my GitHub repo name. Since I was initially deploying the website to GitHub pages I had to update the assetPrefix and basePath when the build process was ran by a GitHub action. 
+
+
+if (isGithubActions && !isFTPVersion) {
+
+ The reason is 
         New .yml file
                 https://docs.github.com/en/actions/using-workflows/reusing-workflows & secret scope
                 TODO: FTPS doesn't seem to work with OVH hosting
@@ -35,3 +36,4 @@ Custom FTP action to upload the generatic static website to a remote server
             assetPrefix = `/${repo}/`
             basePath = `/${repo}`
             }
+
