@@ -18,22 +18,17 @@ DNS and Multisite configuration https://docs.ovh.com/gb/en/hosting/multisites-co
 
 Once set up I had CSS issues. The CSS wasn't loading as the HTML was looking for the code withing my GitHub repo name. Since I was initially deploying the website to GitHub pages I had to update the assetPrefix and basePath when the build process was ran by a GitHub action. 
 
+const isGithubActions = process.env.GITHUB_ACTIONS || false
+if (isGithubActions) {
 
-if (isGithubActions && !isFTPVersion) {
+Removing the variable and if statement would solve the issue. However I wanted to keep the GitHub Page, maybe as a disaster recovery option 😅.
 
- The reason is 
-        New .yml file
-                https://docs.github.com/en/actions/using-workflows/reusing-workflows & secret scope
-                TODO: FTPS doesn't seem to work with OVH hosting
+Here is my updated code with a new variable and an updated logical condition. 
 
-        Next.config.js configuration changes
-            const isFTPVersion = process.env.ftpVersion || false
+           const isFTPVersion =            const isFTPVersion = process.env.ftpVersion || false
 
             if (isGithubActions && !isFTPVersion) {
-            // trim off `<owner>/`
-            const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
 
-            assetPrefix = `/${repo}/`
-            basePath = `/${repo}`
-            }
+process.env.ftpVersion has to be added a .yml and since I wanted to keep deploying to GitHub pages, I created another Build and Deploy workflow to FTP the newly build website that isn't definying assetPrefix and basePath.
 
+A push to the main branch starts, which then use workflow. The hiccup encountered was related to the unavailability of the repository secrets. This was fixed after reading the following help page: [reusing workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
