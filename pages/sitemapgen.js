@@ -1,4 +1,5 @@
 //pages/sitemap.xml.js
+/*
 var EXTERNAL_DATA_URL = 'https://nicolas.grymonprez.com';
 
 function generateSiteMap(posts) {
@@ -26,9 +27,10 @@ function generateSiteMap(posts) {
  `;
 }
 
-function SiteMap() {
-  // getServerSideProps will do the heavy lifting
+function SiteMapGen(props) {
+  // getServerSideProps would do the heavy lifting if a server was available
 }
+
 
 export async function getServerSideProps({ res }) {
   const env = process.env.NODE_ENV
@@ -53,4 +55,5 @@ export async function getServerSideProps({ res }) {
   };
 }
 
-export default SiteMap;
+export default SiteMapGen;
+*/
