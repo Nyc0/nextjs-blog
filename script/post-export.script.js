@@ -1,14 +1,19 @@
-var EXTERNAL_DATA_URL = 'https://nicolas.grymonprez.com';
+const EXTERNAL_DATA_URL = 'https://nicolas.grymonprez.com';
 
 async function generateSiteMap() {    
-    // We make an API call to gather the URLs for our site - API MUST EXIST!
-    const request = await fetch(EXTERNAL_DATA_URL + '/api/posts');
-    
-    console.log(EXTERNAL_DATA_URL + '/api/posts');
-    console.log(request);
+    const fileNames = fs.readdirSync(postsDirectory);
+  
+    posts = fileNames.map((fileName) => {
+      return {
+        params: {
+          id: fileName.replace(/\.md$/, ''),
+        },
+      };
+    });
 
     const posts = await request.json();
 
+    console.log(posts);
     console.log(posts.paths);
 
     xml = `<?xml version="1.0" encoding="UTF-8"?>

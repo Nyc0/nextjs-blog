@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "testexport": "node script/post-export.script.js"
+    "postexport": "py script/make-sitemap.py"
   },
   "dependencies": {
     "chart.js": "^4.2.1",
