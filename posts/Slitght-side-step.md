@@ -16,7 +16,7 @@ Since my hosting was set up against my WordPress website, I had to configure the
 
 Once set up I had CSS issues. The CSS wasn't loading as the HTML was looking for the code withing my GitHub repo name. Since I was initially deploying the website to GitHub pages I had to update the assetPrefix and basePath when the build process was ran by a GitHub action. 
 
-```
+```javascript
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
 if (isGithubActions) {
@@ -32,7 +32,7 @@ Removing the variable and if statement would solve the issue. However I wanted t
 
 Here is my updated code with a new variable and an updated logical condition. 
 
-```
+```js
 const isFTPVersion = const isFTPVersion = process.env.ftpVersion || false
 
 if (isGithubActions && !isFTPVersion) {
