@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "postexport": "node script/post-export.script.js"
+    "testexport": "node script/post-export.script.js"
   },
   "dependencies": {
     "chart.js": "^4.2.1",
