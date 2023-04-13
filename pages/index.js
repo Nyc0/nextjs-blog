@@ -30,6 +30,11 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Projects</h2>
+        <Link href="/nvc">NVC Tracker</Link>
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
@@ -42,11 +47,6 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
-      </section>
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Projects</h2>
-        <Link href="/nvc">NVC Tracker</Link>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
