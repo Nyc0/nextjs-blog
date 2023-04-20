@@ -9,6 +9,9 @@ on:
         description: "The git ref to build"
         required: true
         type: string
+    secrets:
+      ftpPwd:
+        required: true
 
 permissions:
   contents: write
@@ -54,5 +57,5 @@ jobs:
     uses: Nyc0/nextjs-blog/.github/workflows/ftp-blog.yml@main
     #Secrets would not be known by the reusable workflow, they either have to be explicite or inherit https://docs.github.com/en/actions/using-workflows/reusing-workflows 
     secrets:
-      ftpPwd: ${{ secrets.FTP_PASSWORD }}
+      ftpPwd: ${{ secrets.ftpPwd }}
     needs: [build]

@@ -32,6 +32,8 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Projects</h2>
         <Link href="/nvc">NVC Tracker</Link>
+        <br />
+        <Link href="/md3">Model 3 Tracker</Link>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

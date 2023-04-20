@@ -48,3 +48,6 @@ jobs:
     needs: [update-nvc-data]
     with:
       ref: ${{ needs.update-nvc-data.outputs.new-commit-sha }}
+    #Secrets would not be known by the reusable workflow, they either have to be explicite or inherit https://docs.github.com/en/actions/using-workflows/reusing-workflows 
+    secrets:
+      ftpPwd: ${{ secrets.FTP_PASSWORD }}
