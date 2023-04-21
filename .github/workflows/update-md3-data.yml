@@ -1,0 +1,33 @@
+name: Update MD3 data
+
+on:
+  schedule:
+    # check every day for the rest of the week at 6:38 UTC
+    - cron: 38 6 * * *
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: lib
+
+jobs:
+  update-nvc-data:
+    name: Update MD3 data
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Install dependencies
+        run: |
+          python -m pip install requests
+          python -m pip install selenium
+      - name: Run script
+        run: python md3-scrap.py
+      - name: Commit changes
+        id: commit
+        uses: EndBug/add-and-commit@v9
