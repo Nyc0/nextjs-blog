@@ -5,7 +5,6 @@ from selenium.common.exceptions import NoSuchElementException
 # see https://selenium-python.readthedocs.io/locating-elements.html
 from selenium.webdriver.common.by import By
 import requests
-from bs4 import BeautifulSoup
 import json
 import time
 from datetime import date
