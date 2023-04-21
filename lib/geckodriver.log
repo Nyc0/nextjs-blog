@@ -12208,3 +12208,23 @@ console.error: ({})
 DevTools listening on ws://127.0.0.1:21038/devtools/browser/0d87caae-d6a3-4384-8ee8-ffc9c5e15c97
 1682005488558	Marionette	INFO	Stopped listening on port 21057
 Dynamically enable window occlusion 1
+1682085853890	geckodriver	INFO	Listening on 127.0.0.1:45439
+1682085854275	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "56045" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilenZ8W4V"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682085860661	Marionette	INFO	Marionette enabled
+1682085860674	Marionette	INFO	Listening on port 32997
+Read port: 32997
+WebDriver BiDi listening on ws://127.0.0.1:56045
+Read port: 32997
+1682085862648	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilenZ8W4V/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:56045/devtools/browser/d0ded35d-d340-4001-94ce-be1946b8d976
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682085922289	Marionette	INFO	Stopped listening on port 32997
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
