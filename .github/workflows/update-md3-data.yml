@@ -27,7 +27,7 @@ jobs:
           python -m pip install requests
           python -m pip install selenium
       - name: Run script
-        run: python md3-scrap.py
+        run: python tmd3-scrap.py
       - name: Commit changes
         id: commit
         uses: EndBug/add-and-commit@v9
