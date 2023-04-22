@@ -20,7 +20,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function Cv(props) {
+export default function Nvc(props) {
     const creations = props.creation;
     const reviews = props.review;
     const inquiries = props.inquiry;

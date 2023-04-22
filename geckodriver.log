@@ -1,0 +1,49 @@
+1681418616933	geckodriver	INFO	Listening on 127.0.0.1:5669
+1681418866336	geckodriver	INFO	Listening on 127.0.0.1:6440
+1681418869354	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "6441" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nicol\\AppData\\Local\\Temp\\rust_mozprofileXpTc9Q"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1681418869918	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1681418869927	Marionette	INFO	Listening on port 6462
+Read port: 6462
+WebDriver BiDi listening on ws://127.0.0.1:6441
+1681418870717	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\nicol\\AppData\\Local\\Temp\\rust_mozprofileXpTc9Q\\search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+console.error: ({})
+DevTools listening on ws://127.0.0.1:6441/devtools/browser/423d5feb-cd03-4849-a4c2-e557ee6eba1f
+1681419557104	geckodriver	INFO	Listening on 127.0.0.1:9336
+1681419560144	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "9337" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nicol\\AppData\\Local\\Temp\\rust_mozprofileJFL1qB"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1681419560665	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1681419560674	Marionette	INFO	Listening on port 9357
+Read port: 9357
+WebDriver BiDi listening on ws://127.0.0.1:9337
+1681419560943	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\nicol\\AppData\\Local\\Temp\\rust_mozprofileJFL1qB\\search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:9337/devtools/browser/5452cf62-e6c9-41f6-b901-9c1852d3f641
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://duckduckgo.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://duckduckgo.com."
+console.error: (new TypeError("currentNode is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 66))
+TypeError: currentNode is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:66:20
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+getMutations@resource://devtools/client/fronts/walker.js:313:10
+
+console.warn: "Listener for event 'frame' did not return a promise."
+console.error: "Unable to find target with innerWindowId:6442450946"
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1681449163177	Marionette	INFO	Stopped listening on port 9357
+Dynamically enable window occlusion 1

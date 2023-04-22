@@ -13,6 +13,12 @@ xml = '''<?xml version="1.0" encoding="UTF-8"?>
         <url>
         <loc>https://nicolas.grymonprez.com/nvc</loc>
         </url>
+        <url>
+        <loc>https://nicolas.grymonprez.com/md3</loc>
+        </url>
+        <url>
+        <loc>https://nicolas.grymonprez.com/mdy</loc>
+        </url>
         '''
 
 for file in os.listdir("posts"):
