@@ -1,4 +1,4 @@
-name: Update MD3 data
+name: Update Telsa data
 
 on:
   schedule:
@@ -11,11 +11,14 @@ defaults:
     working-directory: lib
 
 jobs:
-  update-nvc-data:
+  update-tesla-data:
     name: Update MD3 data
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      new-commit-sha: ${{ steps.head_commit.outputs.commit_sha }}
+      updated: ${{ steps.commit.outputs.pushed }}
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
@@ -27,8 +30,24 @@ jobs:
           python -m pip install requests
           python -m pip install beautifulsoup4
           python -m pip install selenium
-      - name: Run script
+      - name: Run MD3 scrap script
         run: python tmd3-scrap.py
+      - name: Run MDY scrap script
+        run: python tmdy-scrap.py
       - name: Commit changes
         id: commit
         uses: EndBug/add-and-commit@v9
+      - id: head_commit
+        run: echo "commit_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+  build:
+    if: needs.update-tesla-data.outputs.updated == 'true'
+    permissions:
+      contents: write
+    uses: Nyc0/nextjs-blog/.github/workflows/build-and-deploy-blog-following-update.yml@main
+    needs: [update-tesla-data]
+    with:
+      ref: ${{ needs.update-tesla-data.outputs.new-commit-sha }}
+    #Secrets would not be known by the reusable workflow, they either have to be explicite or inherit https://docs.github.com/en/actions/using-workflows/reusing-workflows 
+    secrets:
+      ftpPwd: ${{ secrets.FTP_PASSWORD }}
