@@ -34,6 +34,8 @@ export default function Home({ allPostsData }) {
         <Link href="/nvc">NVC Tracker</Link>
         <br />
         <Link href="/md3">Model 3 Tracker</Link>
+        <br />
+        <Link href="/mdy">Model Y Tracker</Link>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
