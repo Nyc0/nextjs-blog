@@ -1,12 +1,9 @@
-name: Update NVC data
+name: Update Telsa data
 
 on:
   schedule:
-    # Remember the time is UTC https://www.worldtimebuddy.com/
-    # check every hour on Monday outside the update window from 12:38 to 7:38 pm EDT
-    - cron: 38 18-23 * * 1
-    # check every day for the rest of the week at 4:38 am
-    - cron: 38 8 * * 0,2-6
+    # check every day for the rest of the week at 6:38 UTC
+    - cron: 38 6 * * *
   workflow_dispatch:
 
 defaults:
@@ -14,8 +11,8 @@ defaults:
     working-directory: lib
 
 jobs:
-  update-nvc-data:
-    name: Update NVC data
+  update-tesla-data:
+    name: Update MD3 data
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -32,8 +29,11 @@ jobs:
         run: |
           python -m pip install requests
           python -m pip install beautifulsoup4
-      - name: Run script
-        run: python nvc-scrap.py
+          python -m pip install selenium
+      - name: Run MD3 scrap script
+        run: python tmd3-scrap.py
+      - name: Run MDY scrap script
+        run: python tmdy-scrap.py
       - name: Commit changes
         id: commit
         uses: EndBug/add-and-commit@v9
@@ -41,13 +41,13 @@ jobs:
         run: echo "commit_sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
 
   build:
-    if: needs.update-nvc-data.outputs.updated == 'true'
+    if: needs.update-tesla-data.outputs.updated == 'true'
     permissions:
       contents: write
     uses: Nyc0/nextjs-blog/.github/workflows/build-and-deploy-blog-following-update.yml@main
-    needs: [update-nvc-data]
+    needs: [update-tesla-data]
     with:
-      ref: ${{ needs.update-nvc-data.outputs.new-commit-sha }}
+      ref: ${{ needs.update-tesla-data.outputs.new-commit-sha }}
     #Secrets would not be known by the reusable workflow, they either have to be explicite or inherit https://docs.github.com/en/actions/using-workflows/reusing-workflows 
     secrets:
       ftpPwd: ${{ secrets.FTP_PASSWORD }}
