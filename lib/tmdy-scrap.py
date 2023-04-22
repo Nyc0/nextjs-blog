@@ -141,9 +141,11 @@ for modelCode in dataJSON:
         time.sleep(0.5)
         if priceStr not in 'Included':
           price = priceStr.replace('$','').replace(',','')
-        if pilotStr not in mdy_dataJSON[modelName]['options']:
-          mdy_dataJSON[modelName]['options'][pilotStr] = {}
-        mdy_dataJSON[modelName]['options'][pilotStr][todayStr] = int(price)
+        if "OTHER" not in mdy_dataJSON[modelName]['options']:
+          mdy_dataJSON[modelName]['options']["OTHER"] = {}
+        if pilotStr not in mdy_dataJSON[modelName]['options']["OTHER"]:
+          mdy_dataJSON[modelName]['options']["OTHER"][pilotStr] = {}
+        mdy_dataJSON[modelName]['options']["OTHER"][pilotStr][todayStr] = int(price)
         nbr += 1
 
       ## TODO: Charging
