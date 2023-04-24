@@ -11,15 +11,14 @@ Trackers:
 - Model X 
 - [Model Y](https://nyc0.github.io/nextjs-blog/mdy)
 
-How to they work?
+# How to they work?
 
-Collect information
+The pages reliese on two components. 
+1. Collect information: a python script using request and selenium loads the web page and browse through the DOM component based on my initial analysis. The script collects the data in a JSON object, which get saved on completion. 
+2. Display information: a Next.js page create the static web page based on the JSON file, and Chart.js object. 
+In order to review the data more easily, I have included button allowing to filter the charts based on an option prefix (P-, W-. I-, O-).
 
-Display information
-
-Add filters
-
-Next steps?
+## Next steps?
 - Add seater option data to mdy page
 - Use Object programming to define a car and options
 - S & X trackers
