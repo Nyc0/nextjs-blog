@@ -11,7 +11,7 @@ Trackers:
 - Model X 
 - [Model Y](https://nyc0.github.io/nextjs-blog/mdy)
 
-# How to they work?
+# How do they work?
 
 The pages reliese on two components. 
 1. Collect information: a python script using request and selenium loads the web page and browse through the DOM component based on my initial analysis. The script collects the data in a JSON object, which get saved on completion. 
