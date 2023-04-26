@@ -252,7 +252,7 @@ export default function Mds(props) {
   return (
       <Layout>
           <Head>
-              <title>Model Y Tracker</title>
+              <title>Model S Tracker</title>
           </Head>
           <article>
               <h1 className={utilStyles.headingXl}>Model S Tracker</h1>

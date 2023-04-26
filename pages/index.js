@@ -31,15 +31,44 @@ export default function Home({ allPostsData }) {
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Projects</h2>
-        <Link href="/nvc">NVC Tracker</Link>
-        <br />
-        <Link href="/mds">Model S Tracker</Link>
-        <br />
-        <Link href="/md3">Model 3 Tracker</Link>
-        <br />
-        <Link href="/mdx">Model X Tracker</Link>
-        <br />
-        <Link href="/mdy">Model Y Tracker</Link>
+        <ul>
+          <li><Link href="/nvc">NVC Tracker</Link></li>
+          <li>US Tesla trackers:</li>
+          <table>
+            <tr>
+              <th><Image
+                    priority
+                    src="/images/flags/us.svg"
+                    height={70}
+                    width={70}
+                    quality={75}
+                    alt={job.name}
+                />
+              </th>
+              <th>Canada</th>
+              <th>Mexico</th>
+              <th>Puerto Rico</th>
+            </tr>
+            <tr>
+              <td><Link href="/mds">S</Link></td> 
+              <td></td> 
+              <td></td> 
+              <td></td> 
+            </tr>
+            <tr>
+              <td><Link href="/md3">3</Link></td> 
+              <td></td> 
+              <td></td> 
+              <td></td> 
+            </tr>
+            <tr>
+              <td><Link href="/mdy">Y</Link></td> 
+              <td></td> 
+              <td></td> 
+              <td></td>
+            </tr>
+          </table>
+        </ul>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
