@@ -10,7 +10,7 @@ import fsPromises from 'fs/promises';
 import path from 'path'
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), '/data/md3.json');
+  const filePath = path.join(process.cwd(), '/data/mds.json');
   const jsonData = await fsPromises.readFile(filePath);
   const objectData = JSON.parse(jsonData);
 
@@ -25,7 +25,7 @@ function getOption(text, option) {
     plugins: {
       title: {
         display: true,
-        text: (option?'Price of the Model 3 ('+text+') options':'Price of the Model 3 trims')
+        text: (option?'Price of the Model S ('+text+') options':'Price of the Model S trims')
       },
     },
     interaction: {
@@ -66,7 +66,7 @@ function isLabelExisting(labels, label) {
   return false;
 }
 
-export default function Md3(props) {
+export default function Mds(props) {
 
   const labels = new Array();
   const models = new Array();
@@ -252,16 +252,16 @@ export default function Md3(props) {
   return (
       <Layout>
           <Head>
-              <title>Model 3 Tracker</title>
+              <title>Model Y Tracker</title>
           </Head>
           <article>
-              <h1 className={utilStyles.headingXl}>Model 3 Tracker</h1>
+              <h1 className={utilStyles.headingXl}>Model S Tracker</h1>
               <div className={utilStyles.lightText}>
-                  <p>The Model 3 tracker is updated every day. </p>
-                  <p>The data is extracted from <a href="https://www.tesla.com/model3/design#overview">Tesla</a> website.</p>
+                  <p>The Model S tracker is updated every day. </p>
+                  <p>The data is extracted from <a href="https://www.tesla.com/models/design#overview">Tesla</a> website.</p>
                   <canvas id='chart'></canvas>
               </div>
-              <h1 className={utilStyles.headingXl}>Model 3 - TRIM's options</h1>
+              <h1 className={utilStyles.headingXl}>Model S - TRIM's options</h1>
               <div className={utilStyles.lightText}>
                   <canvas id='chartTRIM0'></canvas>
                   <div className={utilStyles.button}>

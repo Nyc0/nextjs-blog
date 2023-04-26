@@ -1,0 +1,142 @@
+{
+    "ALL-WHEEL DRIVE": {
+        "code": {
+            "2023-04-26": "$MTX13"
+        },
+        "price": {
+            "2023-04-26": 97490
+        },
+        "options": {
+            "PAINT": {
+                "Pearl White MultiCoat": {
+                    "2023-04-26": 0
+                },
+                "Solid Black": {
+                    "2023-04-26": 1500
+                },
+                "Midnight Silver Metallic": {
+                    "2023-04-26": 1500
+                },
+                "Deep Blue Metallic": {
+                    "2023-04-26": 1500
+                },
+                "Ultra Red": {
+                    "2023-04-26": 3000
+                }
+            },
+            "WHEELS": {
+                "20 Cyberstream Wheels": {
+                    "2023-04-26": 0
+                },
+                "22 Turbine Wheels": {
+                    "2023-04-26": 5500
+                }
+            },
+            "INTERIOR_PACKAGE": {
+                "All Black": {
+                    "2023-04-26": 0
+                },
+                "Black and White": {
+                    "2023-04-26": 2000
+                },
+                "Cream": {
+                    "2023-04-26": 2000
+                }
+            },
+            "STEERING_WHEEL": {
+                "Steering Wheel": {
+                    "2023-04-26": 0
+                },
+                "Yoke Steering": {
+                    "2023-04-26": 250
+                }
+            },
+            "OTHER": {
+                "Enhanced Autopilot": {
+                    "2023-04-26": 6000
+                },
+                "Full SelfDriving Capability": {
+                    "2023-04-26": 15000
+                }
+            },
+            "REAR_SEATS": {
+                "5": {
+                    "2023-04-26": 0
+                },
+                "6": {
+                    "2023-04-26": 6500
+                },
+                "7": {
+                    "2023-04-26": 3500
+                }
+            }
+        }
+    },
+    "PLAID": {
+        "code": {
+            "2023-04-26": "$MTX14"
+        },
+        "price": {
+            "2023-04-26": 107490
+        },
+        "options": {
+            "PAINT": {
+                "Pearl White MultiCoat": {
+                    "2023-04-26": 0
+                },
+                "Solid Black": {
+                    "2023-04-26": 1500
+                },
+                "Midnight Silver Metallic": {
+                    "2023-04-26": 1500
+                },
+                "Deep Blue Metallic": {
+                    "2023-04-26": 1500
+                },
+                "Ultra Red": {
+                    "2023-04-26": 3000
+                }
+            },
+            "WHEELS": {
+                "20 Cyberstream Wheels": {
+                    "2023-04-26": 0
+                },
+                "22 Turbine Wheels": {
+                    "2023-04-26": 5500
+                }
+            },
+            "INTERIOR_PACKAGE": {
+                "All Black": {
+                    "2023-04-26": 0
+                },
+                "Black and White": {
+                    "2023-04-26": 2000
+                },
+                "Cream": {
+                    "2023-04-26": 2000
+                }
+            },
+            "STEERING_WHEEL": {
+                "Steering Wheel": {
+                    "2023-04-26": 0
+                },
+                "Yoke Steering": {
+                    "2023-04-26": 250
+                }
+            },
+            "OTHER": {
+                "Enhanced Autopilot": {
+                    "2023-04-26": 6000
+                },
+                "Full SelfDriving Capability": {
+                    "2023-04-26": 15000
+                }
+            },
+            "REAR_SEATS": {
+                "6": {
+                    "2023-04-26": 0
+                }
+            }
+        }
+    }
+}
