@@ -41,8 +41,8 @@ export default function Home({ allPostsData }) {
                 <th><Image
                       priority
                       src="/images/Flags/us.svg"
-                      height={70}
-                      width={70}
+                      height={30}
+                      width={30}
                       quality={75}
                       alt="US"
                   />
@@ -50,8 +50,8 @@ export default function Home({ allPostsData }) {
                 <th><Image
                       priority
                       src="/images/Flags/ca.svg"
-                      height={70}
-                      width={70}
+                      height={30}
+                      width={30}
                       quality={75}
                       alt="Canada"
                   />
@@ -59,8 +59,8 @@ export default function Home({ allPostsData }) {
                 <th><Image
                       priority
                       src="/images/Flags/mx.svg"
-                      height={70}
-                      width={70}
+                      height={30}
+                      width={30}
                       quality={75}
                       alt="Mexico"
                   />
@@ -68,8 +68,8 @@ export default function Home({ allPostsData }) {
                 <th><Image
                       priority
                       src="/images/Flags/pr.svg"
-                      height={70}
-                      width={70}
+                      height={30}
+                      width={30}
                       quality={75}
                       alt="Puerto Rico"
                   />
@@ -86,6 +86,12 @@ export default function Home({ allPostsData }) {
                 <td></td> 
                 <td></td> 
                 <td></td> 
+              </tr>
+              <tr>
+                <td><Link href="/mdx">X</Link></td> 
+                <td></td> 
+                <td></td> 
+                <td></td>
               </tr>
               <tr>
                 <td><Link href="/mdy">Y</Link></td> 
