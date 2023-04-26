@@ -2,16 +2,15 @@
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options
 from selenium.common.exceptions import NoSuchElementException
+# import Action chains 
+from selenium.webdriver.common.action_chains import ActionChains
 # see https://selenium-python.readthedocs.io/locating-elements.html
 from selenium.webdriver.common.by import By
 import requests
 from bs4 import BeautifulSoup
 import json
 import time
-from datetime import date
-# import Action chains 
-from selenium.webdriver.common.action_chains import ActionChains
-import re
+from car import Car
 
 # Set up headless browser
 opts = Options()
@@ -48,13 +47,15 @@ data = script.split('"sku":{"trims":', 1)[-1].rsplit(',"toggle":[')[0]
 dataJSON = json.loads(data)
 
 # Load JSON file
-with open('../data/md3.json') as md3_file:
-  md3_data = md3_file.read()
+# with open('../data/md3.json') as md3_file:
+#   md3_data = md3_file.read()
   
-md3_dataJSON = json.loads(md3_data)
+# md3_dataJSON = json.loads(md3_data)
 
-today = date.today()
-todayStr = today.strftime("%Y-%m-%d")
+# today = date.today()
+# todayStr = today.strftime("%Y-%m-%d")
+
+teslaCar = Car("Tesla Model 3", "md3")
 
 optionList = ["PAINT", "WHEELS", "INTERIOR"]
 
@@ -80,18 +81,20 @@ for modelCode in dataJSON:
         print("Something went wrong when getting the price: " + exc)
 
     #Initiate JSON structure if non existant
-    if modelName not in md3_dataJSON:
-      md3_dataJSON[modelName] = {}
-    if 'code' not in md3_dataJSON[modelName]:
-      md3_dataJSON[modelName]['code'] = {}
-    if 'price' not in md3_dataJSON[modelName]:
-      md3_dataJSON[modelName]['price'] = {}
-    if 'options' not in md3_dataJSON[modelName]:
-      md3_dataJSON[modelName]['options'] = {}
+    # if modelName not in md3_dataJSON:
+    #   md3_dataJSON[modelName] = {}
+    # if 'code' not in md3_dataJSON[modelName]:
+    #   md3_dataJSON[modelName]['code'] = {}
+    # if 'price' not in md3_dataJSON[modelName]:
+    #   md3_dataJSON[modelName]['price'] = {}
+    # if 'options' not in md3_dataJSON[modelName]:
+    #   md3_dataJSON[modelName]['options'] = {}
 
     #Update JSON
-    md3_dataJSON[modelName]['code'][todayStr] = modelCode
-    md3_dataJSON[modelName]['price'][todayStr] = int(price)
+    # md3_dataJSON[modelName]['code'][todayStr] = modelCode
+    # md3_dataJSON[modelName]['price'][todayStr] = int(price)
+
+    teslaCar.addModelData(modelName, modelCode, int(price))
 
     if modelAvailable:
       # Get price of options
@@ -118,12 +121,13 @@ for modelCode in dataJSON:
                 priceStr = browser.find_element(By.CSS_SELECTOR, "p[data-id='"+ optionItem +"-price']").text
                 if priceStr not in 'Included':
                   price = priceStr.replace('$','').replace(',','')
-                optionStr = re.sub("[^a-zA-Z0-9 ]", "", option.text,0)
-                if optionItem not in md3_dataJSON[modelName]['options']:
-                  md3_dataJSON[modelName]['options'][optionItem] = {}
-                if optionStr not in md3_dataJSON[modelName]['options'][optionItem]:
-                  md3_dataJSON[modelName]['options'][optionItem][optionStr] = {}
-                md3_dataJSON[modelName]['options'][optionItem][optionStr][todayStr] = int(price)
+                # optionStr = re.sub("[^a-zA-Z0-9 ]", "", option.text,0)
+                # if optionItem not in md3_dataJSON[modelName]['options']:
+                #   md3_dataJSON[modelName]['options'][optionItem] = {}
+                # if optionStr not in md3_dataJSON[modelName]['options'][optionItem]:
+                #   md3_dataJSON[modelName]['options'][optionItem][optionStr] = {}
+                # md3_dataJSON[modelName]['options'][optionItem][optionStr][todayStr] = int(price)
+                teslaCar.addOptionData(modelName, optionItem, option.text, int(price))
               except NoSuchElementException:
                   print("No price information for this option")
 
@@ -141,11 +145,12 @@ for modelCode in dataJSON:
         time.sleep(0.5)
         if priceStr not in 'Included':
           price = priceStr.replace('$','').replace(',','')
-        if "AUTOPILOT" not in md3_dataJSON[modelName]['options']:
-          md3_dataJSON[modelName]['options']["AUTOPILOT"] = {}
-        if pilotStr not in md3_dataJSON[modelName]['options']["AUTOPILOT"]:
-          md3_dataJSON[modelName]['options']["AUTOPILOT"][pilotStr] = {}
-        md3_dataJSON[modelName]['options']["AUTOPILOT"][pilotStr][todayStr] = int(price)
+        # if "AUTOPILOT" not in md3_dataJSON[modelName]['options']:
+        #   md3_dataJSON[modelName]['options']["AUTOPILOT"] = {}
+        # if pilotStr not in md3_dataJSON[modelName]['options']["AUTOPILOT"]:
+        #   md3_dataJSON[modelName]['options']["AUTOPILOT"][pilotStr] = {}
+        # md3_dataJSON[modelName]['options']["AUTOPILOT"][pilotStr][todayStr] = int(price)
+        teslaCar.addOptionData(modelName, "AUTOPILOT", pilotStr, int(price))
         nbr += 1
 
       ## TODO: Charging
@@ -153,8 +158,10 @@ for modelCode in dataJSON:
         ####tds--vertical_padding--small tds-text_color--black tds-text--end tds-text--500 group--options_block-container_price
 
 # Write the JSON file with a nice formatting
-with open('../data/md3.json', 'w', encoding='utf-8') as md3_file:
-  json.dump(md3_dataJSON,md3_file, ensure_ascii=False, indent=4)
+# with open('../data/md3.json', 'w', encoding='utf-8') as md3_file:
+#   json.dump(md3_dataJSON,md3_file, ensure_ascii=False, indent=4)
+
+teslaCar.saveData()
 
 # Exit
 browser.close()

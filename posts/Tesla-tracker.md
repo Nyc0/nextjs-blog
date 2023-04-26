@@ -6,9 +6,9 @@ date: '2023-04-22'
 Improving on the NVC static webpage scraper that I initially created, I wanted to create a dynamic scraper and display data over time. Since I have a keen interest in what Tesla is doing, I focused on their configuration pages.
 
 Trackers:
-- Model S 
+- [Model S](https://nyc0.github.io/nextjs-blog/mds)
 - [Model 3](https://nyc0.github.io/nextjs-blog/md3)
-- Model X 
+- [Model X](https://nyc0.github.io/nextjs-blog/mdx) 
 - [Model Y](https://nyc0.github.io/nextjs-blog/mdy)
 
 # How do they work?

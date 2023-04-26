@@ -33,7 +33,11 @@ export default function Home({ allPostsData }) {
         <h2 className={utilStyles.headingLg}>Projects</h2>
         <Link href="/nvc">NVC Tracker</Link>
         <br />
+        <Link href="/mds">Model S Tracker</Link>
+        <br />
         <Link href="/md3">Model 3 Tracker</Link>
+        <br />
+        <Link href="/mdx">Model X Tracker</Link>
         <br />
         <Link href="/mdy">Model Y Tracker</Link>
       </section>
