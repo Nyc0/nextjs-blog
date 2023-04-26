@@ -40,7 +40,7 @@ export default function Home({ allPostsData }) {
               <tr>
                 <th><Image
                       priority
-                      src="/images/flags/us.svg"
+                      src="/images/Flags/us.svg"
                       height={70}
                       width={70}
                       quality={75}
@@ -49,7 +49,7 @@ export default function Home({ allPostsData }) {
                 </th>
                 <th><Image
                       priority
-                      src="/images/flags/ca.svg"
+                      src="/images/Flags/ca.svg"
                       height={70}
                       width={70}
                       quality={75}
@@ -58,7 +58,7 @@ export default function Home({ allPostsData }) {
                 </th>
                 <th><Image
                       priority
-                      src="/images/flags/mx.svg"
+                      src="/images/Flags/mx.svg"
                       height={70}
                       width={70}
                       quality={75}
@@ -67,7 +67,7 @@ export default function Home({ allPostsData }) {
                 </th>
                 <th><Image
                       priority
-                      src="/images/flags/pr.svg"
+                      src="/images/Flags/pr.svg"
                       height={70}
                       width={70}
                       quality={75}
