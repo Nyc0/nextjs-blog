@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
+import Image from 'next/image';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -35,38 +36,64 @@ export default function Home({ allPostsData }) {
           <li><Link href="/nvc">NVC Tracker</Link></li>
           <li>US Tesla trackers:</li>
           <table>
-            <tr>
-              <th><Image
-                    priority
-                    src="/images/flags/us.svg"
-                    height={70}
-                    width={70}
-                    quality={75}
-                    alt={job.name}
-                />
-              </th>
-              <th>Canada</th>
-              <th>Mexico</th>
-              <th>Puerto Rico</th>
-            </tr>
-            <tr>
-              <td><Link href="/mds">S</Link></td> 
-              <td></td> 
-              <td></td> 
-              <td></td> 
-            </tr>
-            <tr>
-              <td><Link href="/md3">3</Link></td> 
-              <td></td> 
-              <td></td> 
-              <td></td> 
-            </tr>
-            <tr>
-              <td><Link href="/mdy">Y</Link></td> 
-              <td></td> 
-              <td></td> 
-              <td></td>
-            </tr>
+            <tbody>
+              <tr>
+                <th><Image
+                      priority
+                      src="/images/flags/us.svg"
+                      height={70}
+                      width={70}
+                      quality={75}
+                      alt="US"
+                  />
+                </th>
+                <th><Image
+                      priority
+                      src="/images/flags/ca.svg"
+                      height={70}
+                      width={70}
+                      quality={75}
+                      alt="Canada"
+                  />
+                </th>
+                <th><Image
+                      priority
+                      src="/images/flags/mx.svg"
+                      height={70}
+                      width={70}
+                      quality={75}
+                      alt="Mexico"
+                  />
+                </th>
+                <th><Image
+                      priority
+                      src="/images/flags/pr.svg"
+                      height={70}
+                      width={70}
+                      quality={75}
+                      alt="Puerto Rico"
+                  />
+                </th>
+              </tr>
+              <tr>
+                <td><Link href="/mds">S</Link></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> 
+              </tr>
+              <tr>
+                <td><Link href="/md3">3</Link></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> 
+              </tr>
+              <tr>
+                <td><Link href="/mdy">Y</Link></td> 
+                <td></td> 
+                <td></td> 
+                <td></td>
+              </tr>
+            </tbody>
           </table>
         </ul>
       </section>
