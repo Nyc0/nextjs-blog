@@ -4,6 +4,11 @@ name: FTP blog
 
 on:
   workflow_call:
+    inputs:
+      ref:
+        description: "The git ref to build"
+        required: false
+        type: string
     secrets:
       ftpPwd:
         required: true
@@ -18,6 +23,9 @@ jobs:
       ftpVersion: true
     steps:
       - uses: actions/checkout@v3
+        if: "${{ github.event.inputs.ref != ''}}"
+        with:
+          ref: ${{ inputs.ref }}
 
       - uses: actions/setup-node@v3
         with:
