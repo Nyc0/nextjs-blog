@@ -22,13 +22,15 @@ jobs:
     env:
       ftpVersion: true
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout with reference 
         if: "${{ github.event.inputs.ref != ''}}"
+        uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
 
-      - uses: actions/checkout@v3
+      - name: Checkout without reference 
         if: "${{ github.event.inputs.ref == ''}}"
+        uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3
         with:
