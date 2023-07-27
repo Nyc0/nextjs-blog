@@ -34,9 +34,9 @@ export default function Cv(props) {
                 <h1 className={utilStyles.headingXl}>Résumé</h1>
                 <h2 className={utilStyles.headingXl}>About</h2>
                 <div className={cvStyles.sumText}>
-                    <p>Hello, I am Nicolas Grymonprez. I have 10 years of experience in project deployment in consulting and IT operations in Health Care IT. I was accountable for the success of all projects for my clients. In order to achieve success I focused extensively on road mapping, setting expectations, ensuring that lesson learnt were capture and shared, manage risks and issues, improving processes, and increase transparency.
+                    <p>Hello, I am Nicolas Grymonprez. Achiever, Relator, Analytical are the strengths that describe me the best. Every day starts at zero and something tangible needs to have been accomplished by the end. During my 10 years tenure at Oracle Health (Previously Cerner Corporation) I have continuously demonstrated it through my progression within the organization, leading major projects, improving workflows, coaching, providing feedback, leading initiatives, developing documentations, becoming an internal instructor in Cerner Command Language.
                     <br/><br/>
-                    I am really motivated when I learn and grow with a team. Through my previous carreer I quickly endeavour to become a Cerner Command Language Intermediate and Advanced intructor. I lead effort to standardise and document many workflows and knowledge. On my personal time I spent a lot of time learning sailing, and learning all systems on my previous boat in order to achieve a personal goal. I am currently trying to dive again into application devlopment, as well as learning about DevOps and cloud services and architecture.</p>
+                    Outside of work I enjoy sailing, photography, and learning (this blog)</p>
                 </div>
                 
                 <h2 className={utilStyles.headingXl}>Experience</h2>
