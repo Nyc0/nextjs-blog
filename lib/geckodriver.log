@@ -4357,3 +4357,67 @@ console.error: "update.locale" " file doesn't exist in either the application or
 [Child 2980, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /build/firefox-HNs9Ru/firefox-113.0.1+build1/dom/ipc/jsactor/JSWindowActorChild.cpp:57
 [Child 2980, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /build/firefox-HNs9Ru/firefox-113.0.1+build1/dom/ipc/jsactor/JSWindowActorChild.cpp:57
 [Child 2980, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /build/firefox-HNs9Ru/firefox-113.0.1+build1/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+1690872231236	geckodriver	INFO	Listening on 127.0.0.1:60561
+1690872231761	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "48795" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileodZaWY"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1690872238498	Marionette	INFO	Marionette enabled
+1690872239952	Marionette	INFO	Listening on port 44765
+Read port: 44765
+WebDriver BiDi listening on ws://127.0.0.1:48795
+1690872240277	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:48795/devtools/browser/78eb0077-4a9e-46e9-a08a-baa1531a9593
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1690872313923	Marionette	INFO	Stopped listening on port 44765
+1690872315389	geckodriver	INFO	Listening on 127.0.0.1:32905
+1690872315395	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "50889" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilel7t6Y9"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1690872315727	Marionette	INFO	Marionette enabled
+1690872315817	Marionette	INFO	Listening on port 36379
+WebDriver BiDi listening on ws://127.0.0.1:50889
+Read port: 36379
+1690872316100	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:50889/devtools/browser/5dd0a8d4-43e1-4e8f-b094-d4f8740e7d8e
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1690872395594	Marionette	INFO	Stopped listening on port 36379
+1690872396956	geckodriver	INFO	Listening on 127.0.0.1:37959
+1690872396962	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "48845" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile97Jj1U"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1690872397322	Marionette	INFO	Marionette enabled
+1690872397423	Marionette	INFO	Listening on port 39793
+WebDriver BiDi listening on ws://127.0.0.1:48845
+Read port: 39793
+1690872397666	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:48845/devtools/browser/207fee74-142d-405b-860f-5c886d3d314e
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1690872477330	Marionette	INFO	Stopped listening on port 39793
+1690872478577	geckodriver	INFO	Listening on 127.0.0.1:48203
+1690872478581	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "55567" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileimTorq"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1690872478918	Marionette	INFO	Marionette enabled
+1690872479012	Marionette	INFO	Listening on port 35835
+WebDriver BiDi listening on ws://127.0.0.1:55567
+Read port: 35835
+1690872479318	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:55567/devtools/browser/3532b312-b68f-49ea-9c3a-2b711372e9c0
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1690872566848	Marionette	INFO	Stopped listening on port 35835
