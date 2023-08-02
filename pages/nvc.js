@@ -138,7 +138,7 @@ export default function Nvc(props) {
                                 <li>Current case review time: As of <b>20-Mar-23</b>, we are reviewing documents submitted to us on <b>3-Mar-23</b>.</li>
                                 <li>As of <b>20-Mar-23</b>, we are responding to inquiries received on <b>15-Mar-23</b>.</li>
                             </ul>
-                            <li>The difference of the two dates on each lime is the waiting time</li>
+                            <li>The difference of the two dates on each line is the waiting time</li>
                             <li>The "As of" date gets saved with the waiting time in the nvc.json</li>
                         </ol>
                         <li>If the script updated nvc.json with new dates, GitHub action regenerate the static website</li>
