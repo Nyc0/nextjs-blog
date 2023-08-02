@@ -34,73 +34,7 @@ export default function Home({ allPostsData }) {
         <h2 className={utilStyles.headingLg}>Projects</h2>
         <ul>
           <li><Link href="/nvc">NVC Tracker</Link></li>
-          <li>US Tesla trackers:</li>
-          <table>
-            <tbody>
-              <tr>
-                <th><Image
-                      priority
-                      src="/images/Flags/us.svg"
-                      height={30}
-                      width={30}
-                      quality={75}
-                      alt="US"
-                  />
-                </th>
-                <th><Image
-                      priority
-                      src="/images/Flags/ca.svg"
-                      height={30}
-                      width={30}
-                      quality={75}
-                      alt="Canada"
-                  />
-                </th>
-                <th><Image
-                      priority
-                      src="/images/Flags/mx.svg"
-                      height={30}
-                      width={30}
-                      quality={75}
-                      alt="Mexico"
-                  />
-                </th>
-                <th><Image
-                      priority
-                      src="/images/Flags/pr.svg"
-                      height={30}
-                      width={30}
-                      quality={75}
-                      alt="Puerto Rico"
-                  />
-                </th>
-              </tr>
-              <tr>
-                <td><Link href="/mds">S</Link></td> 
-                <td></td> 
-                <td></td> 
-                <td></td> 
-              </tr>
-              <tr>
-                <td><Link href="/md3">3</Link></td> 
-                <td></td> 
-                <td></td> 
-                <td></td> 
-              </tr>
-              <tr>
-                <td><Link href="/mdx">X</Link></td> 
-                <td></td> 
-                <td></td> 
-                <td></td>
-              </tr>
-              <tr>
-                <td><Link href="/mdy">Y</Link></td> 
-                <td></td> 
-                <td></td> 
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+          <li>US Tesla trackers: <Link href="/mds">S</Link> <Link href="/md3">3</Link> <Link href="/mdx">X</Link> <Link href="/mdy">Y</Link></li>
         </ul>
       </section>
 
