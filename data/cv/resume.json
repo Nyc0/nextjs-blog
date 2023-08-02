@@ -159,10 +159,17 @@
     ]
   }],
   "awards": [{
-    "title": "Award",
-    "date": "2014-11-01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
+    "title": "Rising Start Program 2015",
+    "date": "2015",
+    "awarder": "Cerner",
+    "image": "/images/oraclecerner.jpg",
+    "summary": "The program rewarded high achiever by providing one-on-one discussions with the UK leadership, which helped me understand all parts of the organization. We also worked with the GM to create a process and tool helping the board to review yearly initiatives."
+  }, {
+    "title": "Innovation Award",
+    "date": "2020",
+    "awarder": "Cerner",
+    "image": "/images/oraclecerner.jpg",
+    "summary": "Improve the visibility of Australian Clients footprint by consolidating data from multiple sources, creating PowerApp tool helping data custodian to review and update information, and providing a Power BI report accessible to all employees."
   }],
   "certificates": [{
     "name": "Certificate",
