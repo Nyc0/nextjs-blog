@@ -30,10 +30,14 @@ jobs:
           python -m pip install requests
           python -m pip install beautifulsoup4
           python -m pip install selenium
+      - name: Run MDS scrap script
+        run: python tesla-scrap.py models mds
       - name: Run MD3 scrap script
-        run: python tmd3-scrap.py
+        run: python tesla-scrap.py model3 md3
+      - name: Run MDX scrap script
+        run: python tesla-scrap.py modelx mdx
       - name: Run MDY scrap script
-        run: python tmdy-scrap.py
+        run: python tesla-scrap.py modely mdy
       - name: Commit changes
         id: commit
         uses: EndBug/add-and-commit@v9

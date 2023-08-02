@@ -75,7 +75,7 @@ export default function Md3(props) {
   const chartOption = new Array();
   const borderColors = ["#3e95cd", "#3cba9f", "#ffa500", "#6772d8", "#d35260", "#3ecdbf"];
   const backgroundColors = ["#7bb6dd", "#71d1bd", "#ffc04d", "#8f98e2", "#e28f98", "#8fe2da"];
-  const optionPrefix = {"PAINT": "P-", "WHEELS" : "W-", "INTERIOR" : "I-"}
+  const optionPrefix = {"PAINT": "P-", "WHEELS" : "W-", "INTERIOR" : "I-", "PREMIUM_PACKAGE": "I-", "INTERIOR_PACKAGE": "I-"}
   var nbr = 0;
   var nbrOpt = 0;
   var price = 0;
@@ -165,9 +165,9 @@ export default function Md3(props) {
   const mainChartOption = getOption("",false);
 
   useEffect(() => {
-      var ctx = document.getElementById('md3Chart').getContext('2d');
-      var md3Chart = new Array();
-      md3Chart.push(new ChartJS(ctx, {
+      var ctx = document.getElementById('chart').getContext('2d');
+      var teslaChart = new Array();
+      teslaChart.push(new ChartJS(ctx, {
         type: 'line',
         data: md3Data,
         options: mainChartOption,
@@ -175,8 +175,8 @@ export default function Md3(props) {
       );
 
       for(let n = 0; n < options.length && n < 6; n ++) {
-        var ctx = document.getElementById('md3ChartTRIM'+n).getContext('2d');
-        md3Chart.push(new ChartJS(ctx, {
+        var ctx = document.getElementById('chartTRIM'+n).getContext('2d');
+        teslaChart.push(new ChartJS(ctx, {
           type: 'line',
           data: options[n],
           options: chartOption[n],
@@ -184,12 +184,12 @@ export default function Md3(props) {
         );
 
         document.getElementById("myPaintBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
-            if(md3Chart[n+1].data.datasets[i].label.includes("P-")) {
-              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
+            if(teslaChart[n+1].data.datasets[i].label.includes("P-")) {
+              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
             }
           }
-          md3Chart[n+1].update();
+          teslaChart[n+1].update();
           if (document.getElementById("myPaintBtn"+n).innerText == "Hide paint") {
             document.getElementById("myPaintBtn"+n).innerText = "Show paint";
           } else {
@@ -198,12 +198,12 @@ export default function Md3(props) {
         });
 
         document.getElementById("myWheelBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
-            if(md3Chart[n+1].data.datasets[i].label.includes("W-")) {
-              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
+            if(teslaChart[n+1].data.datasets[i].label.includes("W-")) {
+              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
             }
           }
-          md3Chart[n+1].update();
+          teslaChart[n+1].update();
           if (document.getElementById("myWheelBtn"+n).innerText == "Hide wheel") {
             document.getElementById("myWheelBtn"+n).innerText = "Show wheel";
           } else {
@@ -212,12 +212,12 @@ export default function Md3(props) {
         });
 
         document.getElementById("myInteriorBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
-            if(md3Chart[n+1].data.datasets[i].label.includes("I-")) {
-              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
+            if(teslaChart[n+1].data.datasets[i].label.includes("I-")) {
+              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
             }
           }
-          md3Chart[n+1].update();
+          teslaChart[n+1].update();
           if (document.getElementById("myInteriorBtn"+n).innerText == "Hide interior") {
             document.getElementById("myInteriorBtn"+n).innerText = "Show interior";
           } else {
@@ -226,12 +226,12 @@ export default function Md3(props) {
         });
 
         document.getElementById("myOtherBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
-            if(md3Chart[n+1].data.datasets[i].label.includes("O-")) {
-              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
+            if(teslaChart[n+1].data.datasets[i].label.includes("O-")) {
+              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
             }
           }
-          md3Chart[n+1].update();
+          teslaChart[n+1].update();
           if (document.getElementById("myOtherBtn"+n).innerText == "Hide other") {
             document.getElementById("myOtherBtn"+n).innerText = "Show other";
           } else {
@@ -240,8 +240,8 @@ export default function Md3(props) {
         });
       }
 
-      for (let n = md3Chart.length - 1; n < 6; n++) {
-        document.getElementById("md3ChartTRIM"+n).remove();
+      for (let n = teslaChart.length - 1; n < 6; n++) {
+        document.getElementById("chartTRIM"+n).remove();
         document.getElementById("myPaintBtn"+n).remove();
         document.getElementById("myWheelBtn"+n).remove();
         document.getElementById("myInteriorBtn"+n).remove();
@@ -259,46 +259,46 @@ export default function Md3(props) {
               <div className={utilStyles.lightText}>
                   <p>The Model 3 tracker is updated every day. </p>
                   <p>The data is extracted from <a href="https://www.tesla.com/model3/design#overview">Tesla</a> website.</p>
-                  <canvas id='md3Chart'></canvas>
+                  <canvas id='chart'></canvas>
               </div>
               <h1 className={utilStyles.headingXl}>Model 3 - TRIM's options</h1>
               <div className={utilStyles.lightText}>
-                  <canvas id='md3ChartTRIM0'></canvas>
+                  <canvas id='chartTRIM0'></canvas>
                   <div className={utilStyles.button}>
                     <button id="myPaintBtn0">Hide paint</button>
                     <button id="myWheelBtn0">Hide wheels</button>
                     <button id="myInteriorBtn0">Hide interior</button>
                     <button id="myOtherBtn0">Hide other</button>
                   </div>
-                  <canvas id='md3ChartTRIM1'></canvas>
+                  <canvas id='chartTRIM1'></canvas>
                   <div className={utilStyles.button}>
                     <button id="myPaintBtn1">Hide paint</button>
                     <button id="myWheelBtn1">Hide wheels</button>
                     <button id="myInteriorBtn1">Hide interior</button>
                     <button id="myOtherBtn1">Hide other</button>
                   </div>
-                  <canvas id='md3ChartTRIM2'></canvas>
+                  <canvas id='chartTRIM2'></canvas>
                   <div className={utilStyles.button}>
                     <button id="myPaintBtn2">Hide paint</button>
                     <button id="myWheelBtn2">Hide wheels</button>
                     <button id="myInteriorBtn2">Hide interior</button>
                     <button id="myOtherBtn2">Hide other</button>
                   </div>
-                  <canvas id='md3ChartTRIM3'></canvas>
+                  <canvas id='chartTRIM3'></canvas>
                   <div className={utilStyles.button}>
                     <button id="myPaintBtn3">Hide paint</button>
                     <button id="myWheelBtn3">Hide wheels</button>
                     <button id="myInteriorBtn3">Hide interior</button>
                     <button id="myOtherBtn3">Hide other</button>
                   </div>
-                  <canvas id='md3ChartTRIM4'></canvas>
+                  <canvas id='chartTRIM4'></canvas>
                   <div className={utilStyles.button}>
                     <button id="myPaintBtn4">Hide paint</button>
                     <button id="myWheelBtn4">Hide wheels</button>
                     <button id="myInteriorBtn4">Hide interior</button>
                     <button id="myOtherBtn4">Hide other</button>
                   </div>
-                  <canvas id='md3ChartTRIM5'></canvas>
+                  <canvas id='chartTRIM5'></canvas>
                   <div className={utilStyles.button}>
                     <button id="myPaintBtn5">Hide paint</button>
                     <button id="myWheelBtn5">Hide wheels</button>
