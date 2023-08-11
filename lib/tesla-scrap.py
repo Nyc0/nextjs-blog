@@ -6,7 +6,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
 # see https://selenium-python.readthedocs.io/locating-elements.html
 from selenium.webdriver.common.by import By
-import requests
 from bs4 import BeautifulSoup
 import json
 import time
@@ -18,12 +17,13 @@ from car import Car
 # Load and scroll the website
 ## Set up headless browser
 opts = Options()
-opts.add_argument("--headless")
+#opts.add_argument("--headless")
 browser = Firefox(options=opts)
 
 ## Get page
 URL = f"https://www.tesla.com/{sys.argv[1]}/design#overview"
 browser.get(URL)
+html_content = browser.page_source
 
 ##Wait for the page to load
 time.sleep(10)
@@ -42,12 +42,20 @@ for scrollItem in scrollItems:
 print("The page has been scrolled")
 
 # Get model names
-page = requests.get(URL)
-soup = BeautifulSoup(page.content, "html.parser")
-#Script containing "dataJson" is located in the first table element. 
-#TODO: Add code to locate which element dataJson is stored (in keyword)
-script = soup.findAll('script')[0].string
-data = script.split('"sku":{"trims":', 1)[-1].rsplit(',"toggle":[')[0]
+soup = BeautifulSoup(html_content, "html.parser")
+
+scripts = soup.findAll('script')
+nbr = 0 
+script_found = ""
+for script in scripts:
+  script_text = "".join(script)
+  if '"sku":{"trims":' in script_text:
+     print("sku trims found in the <script> tag #",nbr)
+     script_found = soup.findAll('script')[nbr].string
+     
+  nbr+=1
+
+data = script_found.split('"sku":{"trims":', 1)[-1].rsplit(',"toggle":[')[0]
 dataJSON = json.loads(data)
 
 teslaCar = Car(sys.argv[1], sys.argv[2])
