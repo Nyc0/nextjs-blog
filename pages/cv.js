@@ -22,6 +22,7 @@ export default function Cv(props) {
     const jobs = props.work;
     const skills = props.skills;
     const educations = props.education;
+    const awards = props.awards;
     const languages = props.languages;
     const interests = props.interests;
 
@@ -69,7 +70,29 @@ export default function Cv(props) {
 
                 <h2 className={utilStyles.headingXl}>Awards</h2>
                 <div className={utilStyles.lightText}>
-                    Awards TODO: Load data from json file
+                    {awards.map((award, k) =>
+                        <table key={"edu"+k} className={utilStyles.table}>
+                            <tbody>
+                                <tr>
+                                    <td className={utilStyles.logo}>
+                                        <Image
+                                            priority
+                                            src={award.image}
+                                            height={70}
+                                            width={70}
+                                            quality={75}
+                                            alt={award.awarder}
+                                        />
+                                    </td>
+                                    <td className={cvStyles.jobTitle}>{award.title}</td>
+                                    <td className={cvStyles.jobDate}>{award.date}</td>
+                                </tr>
+                                <tr>
+                                    <td className={cvStyles.sumExp} colSpan="3">{award.summary}</td>
+                                </tr>
+                            </tbody>
+                    </table>)
+                    }
                 </div>
                 
                 <h2 className={utilStyles.headingXl}>Education</h2>

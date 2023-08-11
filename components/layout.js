@@ -62,8 +62,8 @@ export default function Layout({ children, home, cv }) {
                     <td>
                       <div className={cvStyles.cvTitle}>
                         {name}<br/>
-                        📍 Currently relocating to the USA<br/>
-                        📞: +61 447 561 994<br/>
+                        📍 United States<br/>
+                        📞: (816) 886-8893<br/>
                         📧: <a href="mailto:nicolas.grymonprez@gmail.com">nicolas.grymonprez@gmail.com</a><br/>
                         🌐: French, British 🗣:French, English<br/>                        
                       </div>
