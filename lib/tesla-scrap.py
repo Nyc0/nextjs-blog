@@ -17,7 +17,7 @@ from car import Car
 # Load and scroll the website
 ## Set up headless browser
 opts = Options()
-#opts.add_argument("--headless")
+opts.add_argument("--headless")
 browser = Firefox(options=opts)
 
 ## Get page
