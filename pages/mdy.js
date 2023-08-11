@@ -166,8 +166,8 @@ export default function Mdy(props) {
 
   useEffect(() => {
       var ctx = document.getElementById('chart').getContext('2d');
-      var md3Chart = new Array();
-      md3Chart.push(new ChartJS(ctx, {
+      var teslaChart = new Array();
+      teslaChart.push(new ChartJS(ctx, {
         type: 'line',
         data: md3Data,
         options: mainChartOption,
@@ -176,7 +176,7 @@ export default function Mdy(props) {
 
       for(let n = 0; n < options.length && n < 6; n ++) {
         var ctx = document.getElementById('chartTRIM'+n).getContext('2d');
-        md3Chart.push(new ChartJS(ctx, {
+        teslaChart.push(new ChartJS(ctx, {
           type: 'line',
           data: options[n],
           options: chartOption[n],
@@ -184,12 +184,12 @@ export default function Mdy(props) {
         );
 
         document.getElementById("myPaintBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
-            if(md3Chart[n+1].data.datasets[i].label.includes("P-")) {
-              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
+            if(teslaChart[n+1].data.datasets[i].label.includes("P-")) {
+              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
             }
           }
-          md3Chart[n+1].update();
+          teslaChart[n+1].update();
           if (document.getElementById("myPaintBtn"+n).innerText == "Hide paint") {
             document.getElementById("myPaintBtn"+n).innerText = "Show paint";
           } else {
@@ -198,12 +198,12 @@ export default function Mdy(props) {
         });
 
         document.getElementById("myWheelBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
-            if(md3Chart[n+1].data.datasets[i].label.includes("W-")) {
-              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
+            if(teslaChart[n+1].data.datasets[i].label.includes("W-")) {
+              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
             }
           }
-          md3Chart[n+1].update();
+          teslaChart[n+1].update();
           if (document.getElementById("myWheelBtn"+n).innerText == "Hide wheel") {
             document.getElementById("myWheelBtn"+n).innerText = "Show wheel";
           } else {
@@ -212,12 +212,12 @@ export default function Mdy(props) {
         });
 
         document.getElementById("myInteriorBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
-            if(md3Chart[n+1].data.datasets[i].label.includes("I-")) {
-              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
+            if(teslaChart[n+1].data.datasets[i].label.includes("I-")) {
+              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
             }
           }
-          md3Chart[n+1].update();
+          teslaChart[n+1].update();
           if (document.getElementById("myInteriorBtn"+n).innerText == "Hide interior") {
             document.getElementById("myInteriorBtn"+n).innerText = "Show interior";
           } else {
@@ -226,12 +226,12 @@ export default function Mdy(props) {
         });
 
         document.getElementById("myOtherBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
-            if(md3Chart[n+1].data.datasets[i].label.includes("O-")) {
-              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
+            if(teslaChart[n+1].data.datasets[i].label.includes("O-")) {
+              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
             }
           }
-          md3Chart[n+1].update();
+          teslaChart[n+1].update();
           if (document.getElementById("myOtherBtn"+n).innerText == "Hide other") {
             document.getElementById("myOtherBtn"+n).innerText = "Show other";
           } else {
@@ -240,7 +240,7 @@ export default function Mdy(props) {
         });
       }
 
-      for (let n = md3Chart.length - 1; n < 6; n++) {
+      for (let n = teslaChart.length - 1; n < 6; n++) {
         document.getElementById("chartTRIM"+n).remove();
         document.getElementById("myPaintBtn"+n).remove();
         document.getElementById("myWheelBtn"+n).remove();
