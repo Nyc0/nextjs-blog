@@ -74,3 +74,77 @@ console.error: "update.locale" " file doesn't exist in either the application or
 JavaScript warning: https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js, line 2: Script terminated by timeout at:
 r@https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js:2:896376
 
+1691822618891	geckodriver	INFO	Listening on 127.0.0.1:38265
+1691822618898	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "41599" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileE1bOFO"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1691822619373	Marionette	INFO	Marionette enabled
+1691822619481	Marionette	INFO	Listening on port 38717
+Read port: 38717
+WebDriver BiDi listening on ws://127.0.0.1:41599
+1691822619595	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:41599/devtools/browser/663f7b45-09ce-4bc1-9668-ccb56dca3519
+JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
+JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
+JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
+JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1691822685831	Marionette	INFO	Stopped listening on port 38717
+JavaScript warning: https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js:2:896376
+
+1691822686904	geckodriver	INFO	Listening on 127.0.0.1:44521
+1691822686910	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "53657" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiledtgrcd"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1691822687182	Marionette	INFO	Marionette enabled
+1691822687258	Marionette	INFO	Listening on port 39065
+WebDriver BiDi listening on ws://127.0.0.1:53657
+Read port: 39065
+1691822687493	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:53657/devtools/browser/bf69f941-7f58-4e02-b041-b6a9a9ec90d4
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1691822761335	Marionette	INFO	Stopped listening on port 39065
+JavaScript warning: https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js:2:896376
+
+1691822762511	geckodriver	INFO	Listening on 127.0.0.1:54747
+1691822762517	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "39397" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileyOv15D"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1691822762795	Marionette	INFO	Marionette enabled
+1691822762873	Marionette	INFO	Listening on port 35763
+WebDriver BiDi listening on ws://127.0.0.1:39397
+Read port: 35763
+1691822763078	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:39397/devtools/browser/d84ec600-6e56-4e38-80b4-987b18fafc59
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1691822838170	Marionette	INFO	Stopped listening on port 35763
+1691822839253	geckodriver	INFO	Listening on 127.0.0.1:54173
+1691822839259	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "50541" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0oNd0b"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1691822839548	Marionette	INFO	Marionette enabled
+1691822839636	Marionette	INFO	Listening on port 42407
+WebDriver BiDi listening on ws://127.0.0.1:50541
+Read port: 42407
+1691822839724	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:50541/devtools/browser/ed0e5b0e-3f18-476b-8eb7-fc6a2de11f51
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1691822923093	Marionette	INFO	Stopped listening on port 42407
