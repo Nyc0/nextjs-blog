@@ -10,7 +10,7 @@ import fsPromises from 'fs/promises';
 import path from 'path'
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), '/data/mdx.json');
+  const filePath = path.join(process.cwd(), '/data/mds-light.json');
   const jsonData = await fsPromises.readFile(filePath);
   const objectData = JSON.parse(jsonData);
 
@@ -25,7 +25,7 @@ function getOption(text, option) {
     plugins: {
       title: {
         display: true,
-        text: (option?'Price of the Model X ('+text+') options':'Price of the Model X trims')
+        text: (option?'Price of the Model S ('+text+') options':'Price of the Model S trims')
       },
     },
     interaction: {
@@ -252,16 +252,16 @@ export default function Mds(props) {
   return (
       <Layout>
           <Head>
-              <title>Model X Tracker</title>
+              <title>Model S Tracker</title>
           </Head>
           <article>
-              <h1 className={utilStyles.headingXl}>Model X Tracker</h1>
+              <h1 className={utilStyles.headingXl}>Model S Tracker</h1>
               <div className={utilStyles.lightText}>
-                  <p>The Model X tracker is updated every day. </p>
-                  <p>The data is extracted from <a href="https://www.tesla.com/modelx/design#overview">Tesla</a> website.</p>
+                  <p>The Model S tracker is updated every day. </p>
+                  <p>The data is extracted from <a href="https://www.tesla.com/models/design#overview">Tesla</a> website.</p>
                   <canvas id='chart'></canvas>
               </div>
-              <h1 className={utilStyles.headingXl}>Model X - TRIM's options</h1>
+              <h1 className={utilStyles.headingXl}>Model S - TRIM's options</h1>
               <div className={utilStyles.lightText}>
                   <canvas id='chartTRIM0'></canvas>
                   <div className={utilStyles.button}>

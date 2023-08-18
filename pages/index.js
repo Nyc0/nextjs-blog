@@ -34,7 +34,7 @@ export default function Home({ allPostsData }) {
         <h2 className={utilStyles.headingLg}>Projects</h2>
         <ul>
           <li><Link href="/nvc">NVC Tracker</Link></li>
-          <li>US Tesla trackers: <Link href="/mds">S</Link> <Link href="/md3">3</Link> <Link href="/mdx">X</Link> <Link href="/mdy">Y</Link></li>
+          <li>US Tesla trackers: <Link href="/mds-light">S</Link> <Link href="/md3-light">3</Link> <Link href="/mdx-light">X</Link> <Link href="/mdy-light">Y</Link></li>
         </ul>
       </section>
 
