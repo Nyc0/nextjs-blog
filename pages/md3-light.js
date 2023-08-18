@@ -174,7 +174,7 @@ export default function Md3(props) {
       })
       );
 
-      for(let n = 0; n < options.length && n < 6; n ++) {
+      for(let n = 0; n < options.length && n < 11; n ++) {
         var ctx = document.getElementById('chartTRIM'+n).getContext('2d');
         teslaChart.push(new ChartJS(ctx, {
           type: 'line',
@@ -240,7 +240,7 @@ export default function Md3(props) {
         });
       }
 
-      for (let n = teslaChart.length - 1; n < 6; n++) {
+      for (let n = teslaChart.length - 1; n < 11; n++) {
         document.getElementById("chartTRIM"+n).remove();
         document.getElementById("myPaintBtn"+n).remove();
         document.getElementById("myWheelBtn"+n).remove();
@@ -304,6 +304,41 @@ export default function Md3(props) {
                     <button id="myWheelBtn5">Hide wheels</button>
                     <button id="myInteriorBtn5">Hide interior</button>
                     <button id="myOtherBtn5">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM6'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn6">Hide paint</button>
+                    <button id="myWheelBtn6">Hide wheels</button>
+                    <button id="myInteriorBtn6">Hide interior</button>
+                    <button id="myOtherBtn6">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM7'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn7">Hide paint</button>
+                    <button id="myWheelBtn7">Hide wheels</button>
+                    <button id="myInteriorBtn7">Hide interior</button>
+                    <button id="myOtherBtn7">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM8'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn8">Hide paint</button>
+                    <button id="myWheelBtn8">Hide wheels</button>
+                    <button id="myInteriorBtn8">Hide interior</button>
+                    <button id="myOtherBtn8">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM9'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn9">Hide paint</button>
+                    <button id="myWheelBtn9">Hide wheels</button>
+                    <button id="myInteriorBtn9">Hide interior</button>
+                    <button id="myOtherBtn9">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM10'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn10">Hide paint</button>
+                    <button id="myWheelBtn10">Hide wheels</button>
+                    <button id="myInteriorBtn10">Hide interior</button>
+                    <button id="myOtherBtn10">Hide other</button>
                   </div>
               </div>
           </article>
