@@ -143,6 +143,9 @@ for modelCode in dataJSON:
 
 teslaCar.saveData()
 
+#Clean up the entire data. TODO: Potential issue with amount of time required
+teslaCar.cleanUp()
+
 # Exit
 browser.close()
 quit()
