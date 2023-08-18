@@ -3,15 +3,13 @@ title: 'Tracker update'
 date: '2023-08-17'
 ---
 
-Previous version
+Since the tracker gets updated everyday, it started to be really busy and not entirely usable anymore.
+The new version aim to clean up redundant data, and only show information when it changed. 
 
-New version
+Original view:
+![Screenshot](/images/originalview.png)
 
+New view:
+![Screenshot](/images/cleanedupview.png)
 
-
-# Next steps?
-- Learn about Spring Boot, Java microservices etc.
-- Complete [Spring Boot Microservice Project Full Course in 6 Hours](https://www.youtube.com/watch?v=mPPhcU7oWDU&list=PLSVW22jAG8pBnhAdq9S8BpLnZ0_jVBj0c&index=12&t=5293s)
-- Design an architecture
-- Build services!
-- Learn how to migrate, deploy to a public cloud
+Model3 also added many new trim, which were not all displaying. This would still need some improvment to make it dynamic, but the current version works. 
