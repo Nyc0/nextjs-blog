@@ -126,20 +126,25 @@ class Car:
         
         modelCodeKeyList.sort()
 
-        i = 1
+        i = 2
         nbr = len(modelCodeKeyList) - 1
 
         while i < nbr:
-            incBool = True
+            incrementBool = True
+            #print("Check data from " + modelCodeKeyList[i] + " against " + modelCodeKeyList[i-1])
             if not self.__isNewData(self.tesla_dataJSON, modelCodeKeyList[i], modelCodeKeyList[i-1]):
-                if self.__canBeDeletedDate(self.tesla_dataJSON, modelCodeKeyList[i]):
-                    #print(modelCodeKeyList[i] + " date can be deleted - CLEAN UP")
-                    self.__deleteDate(self.tesla_dataJSON, modelCodeKeyList[i])
-                    modelCodeKeyList.pop(i)
+                if self.__canBeDeletedDate(self.tesla_dataJSON, modelCodeKeyList[i-1]):
+                    #print(modelCodeKeyList[i-1] + " date can be deleted - CLEAN UP " + modelCodeKeyList[i])
+                    self.__deleteDate(self.tesla_dataJSON, modelCodeKeyList[i-1])
+                    modelCodeKeyList.pop(i-1)
                     nbr = len(modelCodeKeyList) - 1
-                    incBool = False
+                    incrementBool = False
+                    
+            else:
+                #If the data is new we jump to the follow pair of data to keep the transition
+                i += 1
             
-            if incBool:
+            if incrementBool:
                 i += 1
         
         with open(f'../data/{self.file}-light.json', 'w', encoding='utf-8') as tesla_file:
@@ -151,6 +156,7 @@ class Car:
         for jsonElement in jsonElements:
             if isinstance(jsonElements[jsonElement], dict):
                 result = result or self.__isNewData(jsonElements[jsonElement], curDate, prevDate)
+
             else: 
                 if (curDate in jsonElements) and (prevDate in jsonElements):
                     result = not (jsonElements[curDate] == jsonElements[prevDate])
@@ -160,11 +166,11 @@ class Car:
                     #If the jsonElements dates starts after the current date then the data set for this model/option hasn't started
                     #If the jsonElements dates ends before the previous date then the data set for this model/option is likely over
                     #In both cases the data should not be considered as new as the data set checked is not started or has ended 
-                    if not ((curDate < keyList[0]) or (keyList[len(keyList)-1] < prevDate)):
+                    if not ((curDate <= keyList[0]) or (keyList[len(keyList)-1] <= prevDate)):
                         result = True
 
                 return result
-
+        
         return result
     
     #Recursive function to go through the JSON file and checked whether the date can be deleted. 
