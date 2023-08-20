@@ -668,3 +668,76 @@ console.error: "update.locale" " file doesn't exist in either the application or
 JavaScript warning: https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js, line 2: Script terminated by timeout at:
 r@https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js:2:896376
 
+1692513826618	geckodriver	INFO	Listening on 127.0.0.1:35867
+1692513827137	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "45449" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWxnExJ"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1692513831725	Marionette	INFO	Marionette enabled
+1692513832511	Marionette	INFO	Listening on port 32921
+Read port: 32921
+WebDriver BiDi listening on ws://127.0.0.1:45449
+1692513832708	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:45449/devtools/browser/89cb05ac-8643-4042-becd-f1d064ea4f71
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1692513927665	Marionette	INFO	Stopped listening on port 32921
+JavaScript warning: https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js:2:896376
+
+1692513929097	geckodriver	INFO	Listening on 127.0.0.1:38403
+1692513929104	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "34249" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileslDILY"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1692513929435	Marionette	INFO	Marionette enabled
+1692513929526	Marionette	INFO	Listening on port 37017
+WebDriver BiDi listening on ws://127.0.0.1:34249
+Read port: 37017
+1692513929808	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:34249/devtools/browser/75b811f2-9824-499a-8265-92a5719e030a
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1692514007273	Marionette	INFO	Stopped listening on port 37017
+JavaScript warning: https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js:2:896376
+
+1692514008515	geckodriver	INFO	Listening on 127.0.0.1:57085
+1692514008521	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "44009" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileGHV4ib"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1692514008848	Marionette	INFO	Marionette enabled
+1692514008939	Marionette	INFO	Listening on port 42937
+WebDriver BiDi listening on ws://127.0.0.1:44009
+Read port: 42937
+1692514009242	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:44009/devtools/browser/c771aafa-d0ed-4b34-85d8-1ef94f4a258b
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1692514115833	Marionette	INFO	Stopped listening on port 42937
+1692514117218	geckodriver	INFO	Listening on 127.0.0.1:48783
+1692514117725	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "42423" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqoNx8w"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1692514118135	Marionette	INFO	Marionette enabled
+1692514118225	Marionette	INFO	Listening on port 46661
+WebDriver BiDi listening on ws://127.0.0.1:42423
+Read port: 46661
+1692514118530	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:42423/devtools/browser/4523f7d9-7ecb-4b33-b486-e863d640d7f0
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1692514206753	Marionette	INFO	Stopped listening on port 46661
+JavaScript warning: https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js:2:896376
+
