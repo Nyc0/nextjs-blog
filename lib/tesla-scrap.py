@@ -77,7 +77,7 @@ for modelCode in dataJSON:
         # perform the operation
         action.perform()
         time.sleep(0.5)
-        price = priceItem.text.replace('$','').replace(',','')
+        price = priceItem.text.replace('$','').replace(',','').replace('*','')
         modelAvailable = True
     except NoSuchElementException:
         print("Couldn't get the price information for this trim (" + modelName + ")")
@@ -112,7 +112,7 @@ for modelCode in dataJSON:
                 try:
                   priceStr = browser.find_element(By.CSS_SELECTOR, "p[data-id='"+ optionCat +"-price']").text
                   if priceStr not in 'Included':
-                    price = priceStr.replace('$','').replace(',','')
+                    price = priceStr.replace('$','').replace(',','').replace('*','')
                     
                   teslaCar.addOptionData(modelName, optionCat, option.text, int(price))
                 except NoSuchElementException:
@@ -131,7 +131,7 @@ for modelCode in dataJSON:
         priceStr = pilot.text
         time.sleep(0.5)
         if priceStr not in 'Included':
-          price = priceStr.replace('$','').replace(',','')
+          price = priceStr.replace('$','').replace(',','').replace('*','')
           
         teslaCar.addOptionData(modelName, "OTHER", pilotStr, int(price))
         
