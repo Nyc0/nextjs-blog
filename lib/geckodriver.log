@@ -3050,3 +3050,79 @@ console.error: "update.locale" " file doesn't exist in either the application or
 JavaScript warning: https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js, line 2: Script terminated by timeout at:
 r@https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js:2:930682
 
+1695278622070	geckodriver	INFO	Listening on 127.0.0.1:50035
+1695278622611	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "56315" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileBfqZ7R"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1695278623098	Marionette	INFO	Marionette enabled
+1695278623212	Marionette	INFO	Listening on port 45697
+WebDriver BiDi listening on ws://127.0.0.1:56315
+Read port: 45697
+1695278623525	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:56315/devtools/browser/6d31eafc-0962-468c-a9e8-0f11cc9661c4
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1695278692022	Marionette	INFO	Stopped listening on port 45697
+JavaScript warning: https://www.tesla.com/app-assets-config/app-find-my-tesla/dist/js/bundle.4dabe93d57fe5f0ac81b.min.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/app-assets-config/app-find-my-tesla/dist/js/bundle.4dabe93d57fe5f0ac81b.min.js:2:4534790
+
+1695278693197	geckodriver	INFO	Listening on 127.0.0.1:37075
+1695278693203	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "41743" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilehgsJvQ"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1695278693488	Marionette	INFO	Marionette enabled
+1695278693575	Marionette	INFO	Listening on port 33433
+WebDriver BiDi listening on ws://127.0.0.1:41743
+Read port: 33433
+1695278693780	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:41743/devtools/browser/9d02249b-55d8-40d7-9538-db5bf88dd197
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1695278769760	Marionette	INFO	Stopped listening on port 33433
+JavaScript warning: https://www.tesla.com/app-assets-config/app-find-my-tesla/dist/js/bundle.4dabe93d57fe5f0ac81b.min.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/app-assets-config/app-find-my-tesla/dist/js/bundle.4dabe93d57fe5f0ac81b.min.js:2:4534790
+
+1695278770849	geckodriver	INFO	Listening on 127.0.0.1:59345
+1695278770854	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "41809" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilefvcWlu"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1695278771150	Marionette	INFO	Marionette enabled
+1695278771230	Marionette	INFO	Listening on port 38663
+WebDriver BiDi listening on ws://127.0.0.1:41809
+Read port: 38663
+1695278771427	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:41809/devtools/browser/0e001e30-2dbb-44f9-b2fc-e60e8abe64be
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1695278848662	Marionette	INFO	Stopped listening on port 38663
+JavaScript warning: https://www.tesla.com/app-assets-config/app-find-my-tesla/dist/js/bundle.4dabe93d57fe5f0ac81b.min.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/app-assets-config/app-find-my-tesla/dist/js/bundle.4dabe93d57fe5f0ac81b.min.js:2:4534790
+
+1695278849959	geckodriver	INFO	Listening on 127.0.0.1:54199
+1695278850463	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "51903" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilebjQtmc"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1695278850749	Marionette	INFO	Marionette enabled
+1695278850832	Marionette	INFO	Listening on port 41311
+WebDriver BiDi listening on ws://127.0.0.1:51903
+Read port: 41311
+1695278851034	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:51903/devtools/browser/70793f45-ca87-484a-b7b2-3aea381d8721
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1695278914042	Marionette	INFO	Stopped listening on port 41311
+JavaScript warning: https://www.tesla.com/app-assets-config/app-find-my-tesla/dist/js/bundle.4dabe93d57fe5f0ac81b.min.js, line 2: Script terminated by timeout at:
+r@https://www.tesla.com/app-assets-config/app-find-my-tesla/dist/js/bundle.4dabe93d57fe5f0ac81b.min.js:2:4534790
+
