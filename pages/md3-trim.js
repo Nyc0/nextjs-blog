@@ -10,7 +10,7 @@ import fsPromises from 'fs/promises';
 import path from 'path'
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), '/data/mdx.json');
+  const filePath = path.join(process.cwd(), '/data/md3-trim.json');
   const jsonData = await fsPromises.readFile(filePath);
   const objectData = JSON.parse(jsonData);
 
@@ -25,7 +25,7 @@ function getOption(text, option) {
     plugins: {
       title: {
         display: true,
-        text: (option?'Price of the Model X ('+text+') options':'Price of the Model X trims')
+        text: (option?'Price of the Model 3 ('+text+') options':'Price of the Model 3 trims')
       },
     },
     interaction: {
@@ -66,7 +66,7 @@ function isLabelExisting(labels, label) {
   return false;
 }
 
-export default function Mds(props) {
+export default function Md3(props) {
 
   const labels = new Array();
   const models = new Array();
@@ -174,7 +174,7 @@ export default function Mds(props) {
       })
       );
 
-      for(let n = 0; n < options.length && n < 6; n ++) {
+      for(let n = 0; n < options.length && n < 11; n ++) {
         var ctx = document.getElementById('chartTRIM'+n).getContext('2d');
         teslaChart.push(new ChartJS(ctx, {
           type: 'line',
@@ -240,7 +240,7 @@ export default function Mds(props) {
         });
       }
 
-      for (let n = teslaChart.length - 1; n < 6; n++) {
+      for (let n = teslaChart.length - 1; n < 11; n++) {
         document.getElementById("chartTRIM"+n).remove();
         document.getElementById("myPaintBtn"+n).remove();
         document.getElementById("myWheelBtn"+n).remove();
@@ -252,16 +252,16 @@ export default function Mds(props) {
   return (
       <Layout>
           <Head>
-              <title>Model X Tracker</title>
+              <title>Model 3 Tracker</title>
           </Head>
           <article>
-              <h1 className={utilStyles.headingXl}>Model X Tracker</h1>
+              <h1 className={utilStyles.headingXl}>Model 3 Tracker</h1>
               <div className={utilStyles.lightText}>
-                  <p>The Model X tracker is updated every day. </p>
-                  <p>The data is extracted from <a href="https://www.tesla.com/modelx/design#overview">Tesla</a> website.</p>
+                  <p>The Model 3 tracker is updated every day. </p>
+                  <p>The data is extracted from <a href="https://www.tesla.com/model3/design#overview">Tesla</a> website.</p>
                   <canvas id='chart'></canvas>
               </div>
-              <h1 className={utilStyles.headingXl}>Model X - TRIM's options</h1>
+              <h1 className={utilStyles.headingXl}>Model 3 - TRIM's options</h1>
               <div className={utilStyles.lightText}>
                   <canvas id='chartTRIM0'></canvas>
                   <div className={utilStyles.button}>
@@ -304,6 +304,41 @@ export default function Mds(props) {
                     <button id="myWheelBtn5">Hide wheels</button>
                     <button id="myInteriorBtn5">Hide interior</button>
                     <button id="myOtherBtn5">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM6'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn6">Hide paint</button>
+                    <button id="myWheelBtn6">Hide wheels</button>
+                    <button id="myInteriorBtn6">Hide interior</button>
+                    <button id="myOtherBtn6">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM7'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn7">Hide paint</button>
+                    <button id="myWheelBtn7">Hide wheels</button>
+                    <button id="myInteriorBtn7">Hide interior</button>
+                    <button id="myOtherBtn7">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM8'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn8">Hide paint</button>
+                    <button id="myWheelBtn8">Hide wheels</button>
+                    <button id="myInteriorBtn8">Hide interior</button>
+                    <button id="myOtherBtn8">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM9'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn9">Hide paint</button>
+                    <button id="myWheelBtn9">Hide wheels</button>
+                    <button id="myInteriorBtn9">Hide interior</button>
+                    <button id="myOtherBtn9">Hide other</button>
+                  </div>
+                  <canvas id='chartTRIM10'></canvas>
+                  <div className={utilStyles.button}>
+                    <button id="myPaintBtn10">Hide paint</button>
+                    <button id="myWheelBtn10">Hide wheels</button>
+                    <button id="myInteriorBtn10">Hide interior</button>
+                    <button id="myOtherBtn10">Hide other</button>
                   </div>
               </div>
           </article>

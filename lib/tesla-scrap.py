@@ -6,7 +6,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
 # see https://selenium-python.readthedocs.io/locating-elements.html
 from selenium.webdriver.common.by import By
-import requests
 from bs4 import BeautifulSoup
 import json
 import time
@@ -24,6 +23,7 @@ browser = Firefox(options=opts)
 ## Get page
 URL = f"https://www.tesla.com/{sys.argv[1]}/design#overview"
 browser.get(URL)
+html_content = browser.page_source
 
 ##Wait for the page to load
 time.sleep(10)
@@ -42,12 +42,20 @@ for scrollItem in scrollItems:
 print("The page has been scrolled")
 
 # Get model names
-page = requests.get(URL)
-soup = BeautifulSoup(page.content, "html.parser")
-#Script containing "dataJson" is located in the first table element. 
-#TODO: Add code to locate which element dataJson is stored (in keyword)
-script = soup.findAll('script')[0].string
-data = script.split('"sku":{"trims":', 1)[-1].rsplit(',"toggle":[')[0]
+soup = BeautifulSoup(html_content, "html.parser")
+
+scripts = soup.findAll('script')
+nbr = 0 
+script_found = ""
+for script in scripts:
+  script_text = "".join(script)
+  if '"sku":{"trims":' in script_text:
+     print("sku trims found in the <script> tag #",nbr)
+     script_found = soup.findAll('script')[nbr].string
+     
+  nbr+=1
+
+data = script_found.split('"sku":{"trims":', 1)[-1].rsplit(',"toggle":[')[0]
 dataJSON = json.loads(data)
 
 teslaCar = Car(sys.argv[1], sys.argv[2])
@@ -69,7 +77,7 @@ for modelCode in dataJSON:
         # perform the operation
         action.perform()
         time.sleep(0.5)
-        price = priceItem.text.replace('$','').replace(',','')
+        price = priceItem.text.replace('$','').replace(',','').replace('*','')
         modelAvailable = True
     except NoSuchElementException:
         print("Couldn't get the price information for this trim (" + modelName + ")")
@@ -104,7 +112,7 @@ for modelCode in dataJSON:
                 try:
                   priceStr = browser.find_element(By.CSS_SELECTOR, "p[data-id='"+ optionCat +"-price']").text
                   if priceStr not in 'Included':
-                    price = priceStr.replace('$','').replace(',','')
+                    price = priceStr.replace('$','').replace(',','').replace('*','')
                     
                   teslaCar.addOptionData(modelName, optionCat, option.text, int(price))
                 except NoSuchElementException:
@@ -123,7 +131,7 @@ for modelCode in dataJSON:
         priceStr = pilot.text
         time.sleep(0.5)
         if priceStr not in 'Included':
-          price = priceStr.replace('$','').replace(',','')
+          price = priceStr.replace('$','').replace(',','').replace('*','')
           
         teslaCar.addOptionData(modelName, "OTHER", pilotStr, int(price))
         
@@ -134,6 +142,9 @@ for modelCode in dataJSON:
         ####tds--vertical_padding--small tds-text_color--black tds-text--end tds-text--500 group--options_block-container_price
 
 teslaCar.saveData()
+
+#Clean up the entire data. TODO: Potential issue with amount of time required
+teslaCar.cleanUp()
 
 # Exit
 browser.close()

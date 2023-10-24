@@ -10,7 +10,7 @@ import fsPromises from 'fs/promises';
 import path from 'path'
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), '/data/mdx.json');
+  const filePath = path.join(process.cwd(), '/data/mdy-trim.json');
   const jsonData = await fsPromises.readFile(filePath);
   const objectData = JSON.parse(jsonData);
 
@@ -25,7 +25,7 @@ function getOption(text, option) {
     plugins: {
       title: {
         display: true,
-        text: (option?'Price of the Model X ('+text+') options':'Price of the Model X trims')
+        text: (option?'Price of the Model Y ('+text+') options':'Price of the Model Y trims')
       },
     },
     interaction: {
@@ -66,7 +66,7 @@ function isLabelExisting(labels, label) {
   return false;
 }
 
-export default function Mds(props) {
+export default function Mdy(props) {
 
   const labels = new Array();
   const models = new Array();
@@ -166,8 +166,8 @@ export default function Mds(props) {
 
   useEffect(() => {
       var ctx = document.getElementById('chart').getContext('2d');
-      var teslaChart = new Array();
-      teslaChart.push(new ChartJS(ctx, {
+      var md3Chart = new Array();
+      md3Chart.push(new ChartJS(ctx, {
         type: 'line',
         data: md3Data,
         options: mainChartOption,
@@ -176,7 +176,7 @@ export default function Mds(props) {
 
       for(let n = 0; n < options.length && n < 6; n ++) {
         var ctx = document.getElementById('chartTRIM'+n).getContext('2d');
-        teslaChart.push(new ChartJS(ctx, {
+        md3Chart.push(new ChartJS(ctx, {
           type: 'line',
           data: options[n],
           options: chartOption[n],
@@ -184,12 +184,12 @@ export default function Mds(props) {
         );
 
         document.getElementById("myPaintBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
-            if(teslaChart[n+1].data.datasets[i].label.includes("P-")) {
-              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
+            if(md3Chart[n+1].data.datasets[i].label.includes("P-")) {
+              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
             }
           }
-          teslaChart[n+1].update();
+          md3Chart[n+1].update();
           if (document.getElementById("myPaintBtn"+n).innerText == "Hide paint") {
             document.getElementById("myPaintBtn"+n).innerText = "Show paint";
           } else {
@@ -198,12 +198,12 @@ export default function Mds(props) {
         });
 
         document.getElementById("myWheelBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
-            if(teslaChart[n+1].data.datasets[i].label.includes("W-")) {
-              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
+            if(md3Chart[n+1].data.datasets[i].label.includes("W-")) {
+              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
             }
           }
-          teslaChart[n+1].update();
+          md3Chart[n+1].update();
           if (document.getElementById("myWheelBtn"+n).innerText == "Hide wheel") {
             document.getElementById("myWheelBtn"+n).innerText = "Show wheel";
           } else {
@@ -212,12 +212,12 @@ export default function Mds(props) {
         });
 
         document.getElementById("myInteriorBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
-            if(teslaChart[n+1].data.datasets[i].label.includes("I-")) {
-              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
+            if(md3Chart[n+1].data.datasets[i].label.includes("I-")) {
+              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
             }
           }
-          teslaChart[n+1].update();
+          md3Chart[n+1].update();
           if (document.getElementById("myInteriorBtn"+n).innerText == "Hide interior") {
             document.getElementById("myInteriorBtn"+n).innerText = "Show interior";
           } else {
@@ -226,12 +226,12 @@ export default function Mds(props) {
         });
 
         document.getElementById("myOtherBtn"+n).addEventListener("click", () => {
-          for(let i = 0; i < teslaChart[n+1].data.datasets.length; i++) {
-            if(teslaChart[n+1].data.datasets[i].label.includes("O-")) {
-              teslaChart[n+1].setDatasetVisibility(i, !teslaChart[n+1].isDatasetVisible(i));
+          for(let i = 0; i < md3Chart[n+1].data.datasets.length; i++) {
+            if(md3Chart[n+1].data.datasets[i].label.includes("O-")) {
+              md3Chart[n+1].setDatasetVisibility(i, !md3Chart[n+1].isDatasetVisible(i));
             }
           }
-          teslaChart[n+1].update();
+          md3Chart[n+1].update();
           if (document.getElementById("myOtherBtn"+n).innerText == "Hide other") {
             document.getElementById("myOtherBtn"+n).innerText = "Show other";
           } else {
@@ -240,7 +240,7 @@ export default function Mds(props) {
         });
       }
 
-      for (let n = teslaChart.length - 1; n < 6; n++) {
+      for (let n = md3Chart.length - 1; n < 6; n++) {
         document.getElementById("chartTRIM"+n).remove();
         document.getElementById("myPaintBtn"+n).remove();
         document.getElementById("myWheelBtn"+n).remove();
@@ -252,16 +252,16 @@ export default function Mds(props) {
   return (
       <Layout>
           <Head>
-              <title>Model X Tracker</title>
+              <title>Model Y Tracker</title>
           </Head>
           <article>
-              <h1 className={utilStyles.headingXl}>Model X Tracker</h1>
+              <h1 className={utilStyles.headingXl}>Model Y Tracker</h1>
               <div className={utilStyles.lightText}>
-                  <p>The Model X tracker is updated every day. </p>
-                  <p>The data is extracted from <a href="https://www.tesla.com/modelx/design#overview">Tesla</a> website.</p>
+                  <p>The Model Y tracker is updated every day. </p>
+                  <p>The data is extracted from <a href="https://www.tesla.com/modely/design#overview">Tesla</a> website.</p>
                   <canvas id='chart'></canvas>
               </div>
-              <h1 className={utilStyles.headingXl}>Model X - TRIM's options</h1>
+              <h1 className={utilStyles.headingXl}>Model Y - TRIM's options</h1>
               <div className={utilStyles.lightText}>
                   <canvas id='chartTRIM0'></canvas>
                   <div className={utilStyles.button}>
