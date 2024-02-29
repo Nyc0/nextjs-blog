@@ -11512,5 +11512,107 @@
                 }
             }
         }
+    },
+    "REAR-WHEEL DRIVE PREMIUM": {
+        "code": {
+            "2024-02-29": "$MT351"
+        },
+        "price": {
+            "2024-02-29": 35990
+        },
+        "options": {
+            "PAINT": {
+                "Stealth Grey": {
+                    "2024-02-29": 0
+                },
+                "Pearl White MultiCoat": {
+                    "2024-02-29": 1000
+                },
+                "Deep Blue Metallic": {
+                    "2024-02-29": 1000
+                },
+                "Solid Black": {
+                    "2024-02-29": 1500
+                },
+                "Ultra Red": {
+                    "2024-02-29": 2000
+                }
+            },
+            "WHEELS": {
+                "18 Photon Wheels": {
+                    "2024-02-29": 0
+                },
+                "19 Nova Wheels": {
+                    "2024-02-29": 1500
+                }
+            },
+            "INTERIOR": {
+                "Black": {
+                    "2024-02-29": 0
+                },
+                "Black and White": {
+                    "2024-02-29": 1500
+                }
+            },
+            "OTHER": {
+                "Enhanced Autopilot": {
+                    "2024-02-29": 6000
+                },
+                "Full SelfDriving Capability": {
+                    "2024-02-29": 12000
+                }
+            }
+        }
+    },
+    "LONG RANGE ALL-WHEEL DRIVE (NV35)": {
+        "code": {
+            "2024-02-29": "$MT352"
+        },
+        "price": {
+            "2024-02-29": 44740
+        },
+        "options": {
+            "PAINT": {
+                "Stealth Grey": {
+                    "2024-02-29": 0
+                },
+                "Pearl White MultiCoat": {
+                    "2024-02-29": 1000
+                },
+                "Deep Blue Metallic": {
+                    "2024-02-29": 1000
+                },
+                "Solid Black": {
+                    "2024-02-29": 1500
+                },
+                "Ultra Red": {
+                    "2024-02-29": 2000
+                }
+            },
+            "WHEELS": {
+                "18 Photon Wheels": {
+                    "2024-02-29": 0
+                },
+                "19 Nova Wheels": {
+                    "2024-02-29": 1500
+                }
+            },
+            "INTERIOR": {
+                "Black": {
+                    "2024-02-29": 0
+                },
+                "Black and White": {
+                    "2024-02-29": 1500
+                }
+            },
+            "OTHER": {
+                "Enhanced Autopilot": {
+                    "2024-02-29": 6000
+                },
+                "Full SelfDriving Capability": {
+                    "2024-02-29": 12000
+                }
+            }
+        }
     }
 }
