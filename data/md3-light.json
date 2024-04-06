@@ -746,42 +746,6 @@
             }
         }
     },
-    "STANDARD RANGE REAR-WHEEL DRIVE": {
-        "code": {
-            "2023-08-16": "$MT318"
-        },
-        "price": {
-            "2023-08-16": 0
-        },
-        "options": {}
-    },
-    "STANDARD RANGE PLUS REAR-WHEEL DRIVE": {
-        "code": {
-            "2023-08-16": "$MT337"
-        },
-        "price": {
-            "2023-08-16": 0
-        },
-        "options": {}
-    },
-    "LONG RANGE REAR-WHEEL DRIVE": {
-        "code": {
-            "2023-08-16": "$MT309"
-        },
-        "price": {
-            "2023-08-16": 0
-        },
-        "options": {}
-    },
-    "MID RANGE REAR-WHEEL DRIVE": {
-        "code": {
-            "2023-08-16": "$MT312"
-        },
-        "price": {
-            "2023-08-16": 0
-        },
-        "options": {}
-    },
     "Rear-Wheel Drive Premium": {
         "code": {
             "2024-01-10": "$MT351",
