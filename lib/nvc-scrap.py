@@ -36,6 +36,11 @@ with requests.Session() as session:
     print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] HTML Inspection")
     print(f"HTTP Status:  {page.status_code}")
     print(f"HTML Length:  {len(page.content)} bytes")
+
+    # 1. Print the first 1000 characters of the page to inspect structural context
+    print("\n--- HTML Preview (First 1000 chars) ---")
+    print(page.text[:1000])
+    
     # 2. Check if the exact target class string even exists in the raw text
     class_target_1 = "tsg-rwd-featurebox"
     class_target_2 = "tsg_rwd_feature_box_single"
@@ -74,9 +79,6 @@ else:
 #Retrieve specific class_ elements of the DOM
 soup = BeautifulSoup(page.content, "html.parser")
 results = soup.find_all(class_="tsg-rwd-featurebox tsg_rwd_feature_box_single")
-print(f"\nTotal elements matched for loop: {len(test_results)}")
-print("=" * 50)
-
 
 #Dictionary to transfor three character months into numbers 
 months = {'Jan' : 1, 'Feb' : 2, 'Mar' : 3, 'Apr' : 4, 'May' : 5, 'Jun' : 6, 'Jul' : 7, 'Aug' : 8, 'Sep' : 9, 'Oct' : 10, 'Nov' : 11, 'Dec' : 12}  
