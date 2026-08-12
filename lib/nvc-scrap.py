@@ -1,4 +1,4 @@
-import requests
+from curl_cffi import requests
 from bs4 import BeautifulSoup
 import re
 import datetime
@@ -7,7 +7,7 @@ import json
 #TODO: Test connectivity
 #Retrieve NVC static web page to get processing timeframe
 URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html"
-page = requests.get(URL)
+page = requests.get(URL, impersonate="chrome")
 
 #Retrieve specific class_ elements of the DOM
 soup = BeautifulSoup(page.content, "html.parser")
