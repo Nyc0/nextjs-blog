@@ -5,13 +5,21 @@ from bs4 import BeautifulSoup
 import re
 import datetime
 import json
+import os
 
 #TODO: Test connectivity
 #Retrieve NVC static web page to get processing timeframe
 URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html"
 #page = requests.get(URL, impersonate="chrome") #with requests 
 
-# 2. Use a curl_cffi Session to handle cookies/headers and impersonate a modern browser
+# 1. Sign up for a free ScraperAPI account to get an API Key
+SCRAPER_API_KEY = os.environ.get("MY_SCRAPER_KEY")
+TARGET_URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html"
+
+# 2. Route your request through their API endpoint
+URL = f"http://scraperapi.com?api_key={SCRAPER_API_KEY}&url={TARGET_URL}"
+
+# 3. Use a curl_cffi Session to handle cookies/headers and impersonate a modern browser
 with requests.Session() as session:
     # 'chrome' acts as your TLS-impersonate profile (simulating standard chrome fingerprints)
     headers = {
