@@ -15,7 +15,25 @@ URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timefra
 with requests.Session() as session:
     # 'chrome' acts as your TLS-impersonate profile (simulating standard chrome fingerprints)
     page = session.get(URL, impersonate="chrome")
-    
+
+# === GITHUB ACTIONS LOGGING BLOCK ===
+print("=" * 50)
+print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] HTTP Request Dispatched")
+print(f"Target URL:    {URL}")
+print(f"Final URL:     {page.url} (Checked for redirects)")
+print(f"Status Code:   {page.status_code}")
+print(f"Content Size:  {len(page.content)} bytes")
+print("=" * 50)
+
+# Check if the page was blocked or retrieved successfully
+if page.status_code == 200:
+    print("✅ SUCCESS: Web page successfully retrieved.")
+elif page.status_code == 403:
+    print("❌ FAILURE: Cloudflare Blocked the Request (403 Forbidden).")
+else:
+    print(f"⚠️ WARNING: Unexpected Status Code received ({page.status_code}).")
+# ====================================
+
 # Create a cloudscraper instance
 #scraper = cloudscraper.create_scraper(
 #    browser={
