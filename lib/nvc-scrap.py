@@ -90,6 +90,15 @@ for result in results:
 
     date_as_format = date_as.strftime("%Y-%m-%d")
 
+    # === GITHUB ACTIONS LOGGING BLOCK ===
+    print("=" * 50)
+    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Dates identified")
+    print(f"date_as:    {date_as}")
+    print(f"date_from:     {date_from}")
+    print(f"nbrOfDays:   {nbrOfDays}")
+    print(f"date_as_format:  {date_as_format}")
+    print("=" * 50)
+    
     #Update JSON file
     if "creation" in description_element.text.strip().lower():
         if parsed_nvc_json['creation'].get(date_as_format) is None:
