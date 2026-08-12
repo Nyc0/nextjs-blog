@@ -14,7 +14,15 @@ URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timefra
 # 2. Use a curl_cffi Session to handle cookies/headers and impersonate a modern browser
 with requests.Session() as session:
     # 'chrome' acts as your TLS-impersonate profile (simulating standard chrome fingerprints)
-    page = session.get(URL, impersonate="chrome")
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1"
+    }
+    page = session.get(URL, impersonate="chrome", headers=headers)
 
 # === GITHUB ACTIONS LOGGING BLOCK ===
 print("=" * 50)
