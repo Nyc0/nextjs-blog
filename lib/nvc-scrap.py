@@ -1,5 +1,5 @@
-#import requests
-from curl_cffi import requests
+import requests
+#from curl_cffi import requests
 #import cloudscraper
 from bs4 import BeautifulSoup
 import re
@@ -12,41 +12,39 @@ import os
 URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html"
 #page = requests.get(URL, impersonate="chrome") #with requests 
 
+payload = { 'api_key': os.environ.get("MY_SCRAPER_KEY"), 'url': 'https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html' }
+page = requests.get('https://api.scraperapi.com/', params=payload)
+#print(r.text)
+
 # 1. Sign up for a free ScraperAPI account to get an API Key
-SCRAPER_API_KEY = os.environ.get("MY_SCRAPER_KEY")
-TARGET_URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html"
+#SCRAPER_API_KEY = os.environ.get("MY_SCRAPER_KEY")
+#TARGET_URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html"
 
 # 2. Route your request through their API endpoint
-URL = f"http://scraperapi.com?api_key={SCRAPER_API_KEY}&url={TARGET_URL}"
+#URL = f"http://scraperapi.com?api_key={SCRAPER_API_KEY}&url={TARGET_URL}"
+
 
 # 3. Use a curl_cffi Session to handle cookies/headers and impersonate a modern browser
-with requests.Session() as session:
+#with requests.Session() as session:
     # 'chrome' acts as your TLS-impersonate profile (simulating standard chrome fingerprints)
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Connection": "keep-alive",
-        "Upgrade-Insecure-Requests": "1"
-    }
-    page = session.get(URL, impersonate="chrome", headers=headers)
-    # === SCRAPING DIAGNOSTIC LOGS ===
-    print("=" * 50)
-    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] HTML Inspection")
-    print(f"HTTP Status:  {page.status_code}")
-    print(f"HTML Length:  {len(page.content)} bytes")
+#    page = session.get(URL, impersonate="chrome")
 
-    # 1. Print the first 1000 characters of the page to inspect structural context
-    print("\n--- HTML Preview (First 1000 chars) ---")
-    print(page.text[:1000])
-    
-    # 2. Check if the exact target class string even exists in the raw text
-    class_target_1 = "tsg-rwd-featurebox"
-    class_target_2 = "tsg_rwd_feature_box_single"
-    print("\n--- Class Target Presence Check ---")
-    print(f"Does '{class_target_1}' exist in HTML?: {class_target_1 in page.text}")
-    print(f"Does '{class_target_2}' exist in HTML?: {class_target_2 in page.text}")
+# === SCRAPING DIAGNOSTIC LOGS ===
+print("=" * 50)
+print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] HTML Inspection")
+print(f"HTTP Status:  {page.status_code}")
+print(f"HTML Length:  {len(page.content)} bytes")
+
+# 1. Print the first 1000 characters of the page to inspect structural context
+print("\n--- HTML Preview (First 1000 chars) ---")
+print(page.text[:1000])
+
+# 2. Check if the exact target class string even exists in the raw text
+class_target_1 = "tsg-rwd-featurebox"
+class_target_2 = "tsg_rwd_feature_box_single"
+print("\n--- Class Target Presence Check ---")
+print(f"Does '{class_target_1}' exist in HTML?: {class_target_1 in page.text}")
+print(f"Does '{class_target_2}' exist in HTML?: {class_target_2 in page.text}")
 
 # === GITHUB ACTIONS LOGGING BLOCK ===
 print("=" * 50)
