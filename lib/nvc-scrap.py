@@ -31,6 +31,17 @@ with requests.Session() as session:
         "Upgrade-Insecure-Requests": "1"
     }
     page = session.get(URL, impersonate="chrome", headers=headers)
+    # === SCRAPING DIAGNOSTIC LOGS ===
+    print("=" * 50)
+    print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] HTML Inspection")
+    print(f"HTTP Status:  {page.status_code}")
+    print(f"HTML Length:  {len(page.content)} bytes")
+    # 2. Check if the exact target class string even exists in the raw text
+    class_target_1 = "tsg-rwd-featurebox"
+    class_target_2 = "tsg_rwd_feature_box_single"
+    print("\n--- Class Target Presence Check ---")
+    print(f"Does '{class_target_1}' exist in HTML?: {class_target_1 in page.text}")
+    print(f"Does '{class_target_2}' exist in HTML?: {class_target_2 in page.text}")
 
 # === GITHUB ACTIONS LOGGING BLOCK ===
 print("=" * 50)
@@ -63,6 +74,9 @@ else:
 #Retrieve specific class_ elements of the DOM
 soup = BeautifulSoup(page.content, "html.parser")
 results = soup.find_all(class_="tsg-rwd-featurebox tsg_rwd_feature_box_single")
+print(f"\nTotal elements matched for loop: {len(test_results)}")
+print("=" * 50)
+
 
 #Dictionary to transfor three character months into numbers 
 months = {'Jan' : 1, 'Feb' : 2, 'Mar' : 3, 'Apr' : 4, 'May' : 5, 'Jun' : 6, 'Jul' : 7, 'Aug' : 8, 'Sep' : 9, 'Oct' : 10, 'Nov' : 11, 'Dec' : 12}  
