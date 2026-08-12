@@ -1,6 +1,6 @@
 #import requests
-#from curl_cffi import requests
-import cloudscraper
+from curl_cffi import requests
+#import cloudscraper
 from bs4 import BeautifulSoup
 import re
 import datetime
@@ -10,17 +10,21 @@ import json
 #Retrieve NVC static web page to get processing timeframe
 URL = "https://travel.state.gov/content/travel/en/us-visas/immigrate/nvc-timeframes.html"
 #page = requests.get(URL, impersonate="chrome") #with requests 
-#page = requests.get(URL, impersonate="chrome") #with curl_cffi 
-# Create a cloudscraper instance
-scraper = cloudscraper.create_scraper(
-    browser={
-        'browser': 'chrome',
-        'platform': 'windows',
-        'desktop': True
-    }
-)
 
-page = scraper.get(URL)
+# 2. Use a curl_cffi Session to handle cookies/headers and impersonate a modern browser
+with requests.Session() as session:
+    # 'chrome' acts as your TLS-impersonate profile (simulating standard chrome fingerprints)
+    page = session.get(URL, impersonate="chrome")
+    
+# Create a cloudscraper instance
+#scraper = cloudscraper.create_scraper(
+#    browser={
+#        'browser': 'chrome',
+#        'platform': 'windows',
+#        'desktop': True
+#    }
+#)
+#page = scraper.get(URL)
 
 #Retrieve specific class_ elements of the DOM
 soup = BeautifulSoup(page.content, "html.parser")
