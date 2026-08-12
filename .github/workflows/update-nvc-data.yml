@@ -36,6 +36,8 @@ jobs:
           python -m pip install requests 
           python -m pip install beautifulsoup4
       - name: Run script
+        env:
+          MY_SCRAPER_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: python nvc-scrap.py
       - name: Commit changes
         id: commit
